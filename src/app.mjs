@@ -32,6 +32,13 @@ function switchDestination(id){
  renderLines();renderPriceState();renderResult();
 }
 $('city').addEventListener('change',()=>switchDestination($('city').value));
+$('more-destinations').addEventListener('click',()=>{
+ const expanded=$('more-destinations').getAttribute('aria-expanded')!=='true';
+ $('more-destinations').setAttribute('aria-expanded',String(expanded));
+ $('country-cards').classList.toggle('show-all',expanded);
+ $('more-destinations').textContent=expanded?'Свернуть список ↑':`Все ${cities.length} направлений ↓`;
+ if(!expanded)$('destinations').scrollIntoView({behavior:'smooth'});
+});
 $('country-cards').addEventListener('click',e=>{const button=e.target.closest('[data-destination]');if(button){switchDestination(button.dataset.destination);$('destination-detail').scrollIntoView({behavior:'smooth'});}});
 for(const id of ['people','months','advance','buffer','reserveMonths','spread','incomeStart',...moneyIds,...moneyIds.map(x=>x+'-currency')])$(id).addEventListener('input',()=>renderResult());
 function readMoney(id){return {amount:$(id).value,currency:$(id+'-currency').value,basis:'household'};}
@@ -43,7 +50,7 @@ function selectedRates(input){
   if(overrides[c]){if(decimal(overrides[c],10)<=0n)throw new Error(`Укажите положительный курс ${c}.`);rates[c]=overrides[c];continue;}
   const quote=snapshot?.quotes?.[c];
   const fresh=quote?ageDays(quote.effectiveDate)>=-1&&ageDays(quote.effectiveDate)<=7:rateFresh(snapshot);
-  if(!fresh||!rates[c])throw new Error(`Нет свежего курса ${c}. В разделе «Откуда берутся цифры» укажите свой курс или проверьте обновление.`);
+  if(!fresh||!rates[c])throw new Error(`Нет свежего курса ${c}. В разделе «Курсы и источники» укажите свой курс или проверьте обновление.`);
  }
  return rates;
 }
@@ -58,7 +65,7 @@ function renderResult(){
   $('required').textContent=money(result.required);$('monthly').textContent=money(result.monthlyPlanned);$('total').textContent=money(result.cost);$('deposit-total').textContent=money(result.deposit);$('reserve-total').textContent=money(result.reserve);
   $('calc-status').textContent=`На ${result.months} мес. · ${result.people} чел. · ${demo?'учебный пример':'по указанным суммам'}.`;const gap=$('gap');gap.hidden=false;gap.className='gap'+(result.gap?' short':'');gap.textContent=result.gap?`До выбранного плана не хватает ${money(result.gap)}.`:`Доступных денег хватает. Сверх плана: ${money(result.surplus)}.`;
   const rows=[{label:'До заселения',outflow:result.upfront,income:0,beforeIncome:result.savings-result.upfront,balance:result.savings-result.upfront},...result.schedule.map(r=>({...r,label:`Месяц ${r.month}`}))];
-  $('schedule').innerHTML=rows.map(r=>`<tr><td>${r.label}</td><td>${money(r.outflow)}</td><td>${money(r.income)}</td><td class="${r.beforeIncome<result.reserve?'negative':''}">${money(r.beforeIncome)}${r.beforeIncome<result.reserve?' *':''}</td><td>${money(r.balance)}</td></tr>`).join('')+`<tr><td colspan="5">* Остаток ниже неприкосновенного резерва ${money(result.reserve)}.</td></tr>`;
+  $('schedule').innerHTML=rows.map(r=>`<tr class="month-row"><td data-label="Период">${r.label}</td><td data-label="Расход">${money(r.outflow)}</td><td data-label="Доход">${money(r.income)}</td><td data-label="До дохода" class="${r.beforeIncome<result.reserve?'negative':''}">${money(r.beforeIncome)}${r.beforeIncome<result.reserve?' *':''}</td><td data-label="Остаток">${money(r.balance)}</td></tr>`).join('')+`<tr><td colspan="5">* Остаток ниже неприкосновенного резерва ${money(result.reserve)}.</td></tr>`;
  }catch(e){hideResult(e.message);}
 }
 function hideResult(message){result=null;$('spending-breakdown').replaceChildren();for(const id of ['required','monthly','total','deposit-total','reserve-total'])$(id).textContent='—';$('gap').hidden=true;$('calc-status').textContent=message;$('schedule').innerHTML='<tr><td colspan="5">Расчёт появится после заполнения корректных сумм и курсов.</td></tr>';}

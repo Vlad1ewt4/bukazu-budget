@@ -31,7 +31,7 @@ jobs:
       - name: Prepare public files only
         run: |
           mkdir -p public-site/src public-site/data
-          cp index.html style.css favicon.svg public-site/
+          cp index.html style.css mobile.css favicon.svg public-site/
           cp src/*.mjs public-site/src/
           cp data/*.json public-site/data/
           cp -r assets public-site/assets
