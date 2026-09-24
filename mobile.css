@@ -31,4 +31,14 @@
  .mobile-dock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:fixed;z-index:30;bottom:0;left:0;right:0;gap:4px;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:#202020;border-top:1px solid #4c4c40;box-shadow:0 -8px 25px #0002}.mobile-dock a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:51px;color:#e4e4dc;text-decoration:none;font-size:12px;line-height:1.3;border-radius:11px}.mobile-dock a span{font-size:10px;font-weight:700;letter-spacing:1px;color:var(--lime)}.mobile-dock a:last-child{background:var(--lime);color:#202020;font-weight:700}.mobile-dock a:last-child span{color:#48571a}.mobile-dock a:hover{background:#35352d}.mobile-dock a:last-child:hover{background:#e8ff78}body:has(input:focus) .mobile-dock,body:has(select:focus) .mobile-dock{display:none}
 }
 @media(max-width:360px){main{padding:0 12px}.top{padding:12px 14px}.brand,.brand span{font-size:23px}.brand small{font-size:6px}h1{font-size:36px}.calculator-heading h2{font-size:27px}.panel{padding:22px 15px}.expense-controls{grid-template-columns:minmax(0,1fr) 96px}.summary-stats{grid-template-columns:1fr}.country-top{flex-wrap:wrap}.country-monthly{font-size:30px}}
+/* Keep the native picker, with an inset arrow and reserved text space. */
+select,.expense-controls select,.money-pair select{
+ appearance:none;-webkit-appearance:none;
+ padding-right:38px;padding-left:12px;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='m3 5 4 4 4-4' fill='none' stroke='%23202020' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+ background-repeat:no-repeat;background-position:right 13px center;background-size:14px 14px;
+}
+@media(max-width:760px){.expense-controls{grid-template-columns:minmax(0,1fr) 112px}}
+@media(max-width:360px){.expense-controls label:nth-child(n+3){grid-column:1/-1}}
+@media(forced-colors:active){select,.expense-controls select,.money-pair select{appearance:auto;-webkit-appearance:auto;background-image:none}}
 @media print{.mobile-dock,.more-destinations{display:none}.country-cards>.country-card{display:flex!important}}
