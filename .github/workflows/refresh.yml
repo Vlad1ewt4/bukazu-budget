@@ -1,0 +1,38 @@
+name: Refresh official data
+on:
+  schedule:
+    - cron: '23 5,14 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Refresh with source dates preserved
+        id: refresh
+        continue-on-error: true
+        env:
+          NUMBEO_API_KEY: ${{ secrets.NUMBEO_API_KEY }}
+          NUMBEO_DISPLAY_LICENSE_CONFIRMED: ${{ vars.NUMBEO_DISPLAY_LICENSE_CONFIRMED }}
+        run: npm run update-data
+      - run: npm test
+      - name: Commit successful updates
+        run: |
+          git add data/rates.json data/prices.json
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh price and currency snapshots'
+            git push
+          fi
+      - name: Report upstream failure
+        if: steps.refresh.outcome == 'failure'
+        run: |
+          echo 'An upstream source failed. Successful updates were saved; failed source dates were not changed.'
+          exit 1

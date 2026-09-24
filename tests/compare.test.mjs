@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {assess} from '../src/compare.mjs';
+const cash=amount=>({amount:String(amount),currency:'RUB',basis:'household'});
+const line=(id,amount)=>({id,label:id,amount:String(amount),currency:'RUB',basis:'household',period:'monthly',enabled:true});
+const base=()=>({people:1,months:3,advance:1,buffer:0,reserveMonths:0,spread:0,incomeStart:1,deposit:cash(0),exitReserve:cash(0),savings:cash(100000),income:cash(40000),lines:[line('rent',30000),line('food',20000)]});
+test('same savings evaluated independently for every destination',()=>{const a=base(),b=base();b.lines[0].amount='60000';const first=assess(a,{RUB:'1'}),second=assess(b,{RUB:'1'});assert.equal(first.savings,10000000);assert.equal(second.savings,10000000);assert.equal(first.fits,true);assert.equal(second.fits,false);assert.equal(second.fundedMonths,1);});
+test('obligations reduce monthly surplus and cash runway',()=>{const a=base();a.lines.push(line('obligations',20000));const r=assess(a,{RUB:'1'});assert.equal(r.recurringBalance,-3000000);assert.equal(r.endBalance,1000000);assert.equal(r.gap,3000000);assert.equal(r.fundedMonths,2);});
+test('sufficient income still needs enough money before first salary',()=>{const a=base();a.savings=cash(10000);a.income=cash(100000);const r=assess(a,{RUB:'1'});assert.equal(r.recurringBalance,5000000);assert.equal(r.fits,false);assert.equal(r.fundedMonths,0);});
+test('unknown costs cannot be ranked as affordable',()=>{const a=base();a.lines[0].amount='';assert.throws(()=>assess(a,{RUB:'1'}));});
+test('fixed personal obligations are not inflated by living-cost buffer',()=>{const a=base();a.buffer=10;a.lines.push(line('obligations',10000));assert.equal(assess(a,{RUB:'1'}).monthlyPlanned,6500000);});

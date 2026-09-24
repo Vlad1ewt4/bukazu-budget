@@ -1,0 +1,44 @@
+name: Publish calculator to GitHub Pages
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: [Refresh official data]
+    types: [completed]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: vars.ENABLE_GITHUB_PAGES == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - name: Prepare public files only
+        run: |
+          mkdir -p public-site/src public-site/data
+          cp index.html style.css favicon.svg public-site/
+          cp src/*.mjs public-site/src/
+          cp data/*.json public-site/data/
+          cp -r assets public-site/assets
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public-site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
