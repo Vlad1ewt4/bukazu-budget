@@ -1,11 +1,25 @@
 import {readFile,writeFile,rename} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
+import https from 'node:https';
 import {cities} from '../src/catalog.mjs';
 import {parseCbr,crossMyr,normalizePrices} from './providers.mjs';
+import {collectPublicPrices} from './public-sources.mjs';
 const root=new URL('../data/',import.meta.url),now=new Date();
 async function read(name){return JSON.parse(await readFile(new URL(name,root),'utf8'));}
 async function save(name,data){const target=fileURLToPath(new URL(name,root));await writeFile(target+'.tmp',JSON.stringify(data,null,2)+'\n');await rename(target+'.tmp',target);}
-async function get(url,headers={}){const r=await fetch(url,{headers,signal:AbortSignal.timeout(25000)});if(!r.ok)throw new Error(`Source returned HTTP ${r.status}`);return r;}
+async function get(url,headers={}){
+ // VNPT's server offers an undersized finite-field DH group. Negotiate strong ECDHE
+ // instead; certificate verification and TLS security levels remain enabled.
+ if(new URL(url).hostname==='vnpt.vn')return new Promise((resolve,reject)=>{
+  const req=https.get(url,{headers,ciphers:'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384',signal:AbortSignal.timeout(25000)},res=>{
+   if(res.statusCode!==200){res.resume();reject(new Error(`Source returned HTTP ${res.statusCode}`));return;}
+   let bytes=0;const chunks=[];
+   res.on('data',chunk=>{bytes+=chunk.length;if(bytes>2000000){req.destroy(new Error('Page too large'));return;}chunks.push(chunk);});
+   res.on('end',()=>resolve(new Response(Buffer.concat(chunks))));res.on('error',reject);
+  });req.on('error',reject);
+ });
+ const r=await fetch(url,{headers,signal:AbortSignal.timeout(25000)});if(!r.ok)throw new Error(`Source returned HTTP ${r.status}`);return r;
+}
 let failures=0;
 try{
  const date=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Moscow',day:'2-digit',month:'2-digit',year:'numeric'}).format(now);
@@ -30,5 +44,11 @@ if(key&&process.env.NUMBEO_DISPLAY_LICENSE_CONFIRMED==='true'){
   }catch{failures++;console.error(`Price refresh failed for ${city.id}; existing source dates were preserved.`);}}
   await save('prices.json',{provider:'Numbeo',status:success===cities.length?'connected':'partial',fetchedAt:success?now.toISOString():previous.fetchedAt,cities:results});
  }catch{failures++;console.error('Price provider unavailable; existing data were preserved.');}
-}else console.log('City price provider is not connected. No estimated market prices were fabricated.');
+}else console.log('Numbeo not connected; collecting the configured public websites.');
+try{
+ const publicResult=await collectPublicPrices(await read('prices.json'),get,now);
+ await save('prices.json',publicResult.snapshot);
+ for(const message of publicResult.errors){failures++;console.error(message);}
+ console.log('Public websites checked. Each price retains its own source and verification date.');
+}catch{failures++;console.error('Public source update failed; previous data retained.');}
 if(failures)process.exitCode=1;

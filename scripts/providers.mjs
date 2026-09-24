@@ -21,7 +21,8 @@ export function crossMyr(cbr,bnm){
  return {value:(Number(cbr.rates.USD)/mid).toFixed(10),effectiveDate:[date,cbr.effectiveDate].sort()[0],source:'Банк России + Bank Negara Malaysia; кросс-курс через USD',sourceUrl:'https://www.bnm.gov.my/exchange-rates',componentDates:{USD_RUB:cbr.effectiveDate,USD_MYR:date}};
 }
 // Only compatible monthly categories. Never use country or neighbouring-city fallback.
-const matches={rent:/Apartment \(1 bedroom\).*Outside of (?:City )?Cent(?:er|re)/i,internet:/Internet.*(?:60|Broadband|Unlimited)/i,transport:/Monthly Pass.*Regular Price/i,phone:/Mobile Phone.*Monthly Plan/i};
+const matches={rent:/Apartment \(1 bedroom\).*Outside of (?:City )?Cent(?:er|re)/i,utilities:/Basic.*Electricity.*(?:85\s*m2|85\s*m²|915\s*sqft)/i,internet:/Internet.*(?:60|Broadband|Unlimited)/i,transport:/Monthly Pass.*Regular Price/i,phone:/Mobile Phone.*Monthly Plan/i};
+const notes={rent:'Квартира с одной спальней вне центра. Для семьи и другого района проверьте подходящее жильё.',utilities:'Счета за квартиру 85 м²: электричество, отопление, охлаждение, вода и вывоз мусора. Скорректируйте под своё жильё.',internet:'Домашний интернет. Если он включён в аренду, оставьте статью выключенной.',transport:'Месячный проездной на одного человека. Такси и аренда байка сюда не входят.',phone:'Месячный мобильный тариф на одного человека.'};
 export function normalizePrices(data,itemCatalog,city,now=new Date()){
  if(data.currency!==city.currency||!Array.isArray(data.prices))throw new Error('Numbeo: mismatched currency or invalid response');
  const y=data.yearLastUpdate,m=data.monthLastUpdate;
@@ -32,7 +33,7 @@ export function normalizePrices(data,itemCatalog,city,now=new Date()){
  for(const [key,rx]of Object.entries(matches)){
   const p=data.prices.find(p=>rx.test(names.get(p.item_id)??''));
   if(!p||!Number.isFinite(p.average_price)||p.average_price<=0||!Number.isFinite(p.data_points)||p.data_points<3)continue;
-  items[key]={amount:p.average_price.toFixed(2),low:Number.isFinite(p.lowest_price)?p.lowest_price:null,high:Number.isFinite(p.highest_price)?p.highest_price:null,currency:data.currency,sourceDate,datePrecision:'month',samples:p.data_points,name:names.get(p.item_id),basis:key==='rent'||key==='internet'?'household':'person',period:'monthly'};
+  items[key]={amount:p.average_price.toFixed(2),low:Number.isFinite(p.lowest_price)?p.lowest_price:null,high:Number.isFinite(p.highest_price)?p.highest_price:null,currency:data.currency,sourceDate,datePrecision:'month',samples:p.data_points,name:names.get(p.item_id),note:notes[key],basis:['rent','internet','utilities'].includes(key)?'household':'person',period:'monthly'};
  }
  return {name:data.name,query:city.query,currency:data.currency,source:'Numbeo',sourceUrl:`https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(city.query.split(',')[0].replaceAll(' ','-'))}`,sourceDate,fetchedAt:now.toISOString(),items};
 }

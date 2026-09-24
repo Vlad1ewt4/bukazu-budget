@@ -1,6 +1,7 @@
 import {calculate,ageDays,rateFresh,decimal} from './calculate.mjs';
 import {assess} from './compare.mjs';
 import {cities,currencies,makeLines} from './catalog.mjs';
+import {freshPriceEntries,applyMarketPrices,applyAllDestinations,priceFresh} from './market-prices.mjs';
 const $=id=>document.getElementById(id),fmt=new Intl.NumberFormat('ru-RU',{style:'currency',currency:'RUB',maximumFractionDigits:2}),money=n=>fmt.format(n/100);
 const displayDate=d=>d?new Date(d).toLocaleDateString('ru-RU'):'нет данных';
 let city=cities[0],lines=makeLines(city.currency),snapshot=null,prices=null,result=null,demo=false;
@@ -17,10 +18,20 @@ function renderLines(){
  $('housing-link').href=city.rent;
  $('housing-community').hidden=city.id!=='danang';
 }
-function setOrigin(l,el){el.querySelector('[data-origin]').textContent=l.origin==='estimate'?`Средняя цена Numbeo · месяц данных ${l.sourceDate.slice(0,7)} · ${l.samples} наблюдений. Проверьте условия конкретного предложения.`:l.origin==='example'?'Учебная сумма, не рыночная цена.':l.amount!==''?'Ваша сумма. Проверьте дату и условия предложения.':'';}
+function setOrigin(l,el){
+ const note=el.querySelector('[data-origin]');
+ const date=l.kind==='official_tariff'?`Тариф проверен ${displayDate(l.checkedAt)}; дата изменения цены оператором не указана.`:l.kind==='listing_sample'?`Выборка проверена ${displayDate(l.checkedAt)}. Самое раннее обновление объявления: ${displayDate(l.sourceDate)}.`:`Срез ${l.sourceDate?.slice(0,7)} · ${l.samples} наблюдений. Средняя цена.`;
+ note.textContent=l.origin==='estimate'?`Автоматически · ${l.source??'Numbeo'}. ${date} ${l.priceNote??''}`:l.origin==='example'?'Учебная сумма, не рыночная цена.':l.amount!==''?'Ваша сумма. Автообновление её не меняет.':'';
+ if(l.origin==='estimate'){
+  for(const [i,url]of [l.sourceUrl,...(l.evidence??[]).map(x=>x.url)].entries()){
+   try{if(new URL(url).protocol!=='https:')continue;}catch{continue;}
+   const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=i?`Объявление ${i} ↗`:'Источник ↗';note.append(' ',a);
+  }
+ }
+}
 $('lines').addEventListener('input',e=>{
  const row=e.target.closest('[data-line]');if(!row)return;const l=lines.find(x=>x.id===row.dataset.line),field=e.target.dataset.field;
- if(field==='enabled'){l.enabled=e.target.checked;renderLines();}else if(field){l[field]=e.target.value;l.origin='manual';l.sourceDate=null;setOrigin(l,row);}
+ if(field==='enabled'){l.enabled=e.target.checked;renderLines();}else if(field){l[field]=e.target.value;l.origin='manual';l.edited=true;l.sourceDate=null;setOrigin(l,row);}
  renderResult();
 });
 function saveDestination(){const p={lines,advance:$('advance').value};for(const id of destinationMoney)p[id]=readMoney(id);drafts.set(city.id,p);}
@@ -60,7 +71,7 @@ function renderResult(){
  document.querySelectorAll('[data-field=amount]').forEach(e=>e.removeAttribute('aria-invalid'));
  if(missing.length){hideResult(`Осталось заполнить: ${missing.map(l=>l.label.toLowerCase()).join(', ')}. Ненужные статьи можно исключить.`);return;}
  try{
-  for(const l of lines.filter(x=>x.enabled&&x.origin==='estimate'))if(ageDays(l.sourceDate)>45||ageDays(l.sourceDate)<-1)throw new Error(`Ориентир «${l.label}» устарел. Введите новую цену или подставьте свежие данные.`);
+  for(const l of lines.filter(x=>x.enabled&&x.origin==='estimate'))if(!priceFresh(l))throw new Error(`Ориентир «${l.label}» устарел. Введите новую цену или подставьте свежие данные.`);
   const input=getInput();result=assess(input,selectedRates(input));renderBreakdown(result);
   $('required').textContent=money(result.required);$('monthly').textContent=money(result.monthlyPlanned);$('total').textContent=money(result.cost);$('deposit-total').textContent=money(result.deposit);$('reserve-total').textContent=money(result.reserve);
   $('calc-status').textContent=`На ${result.months} мес. · ${result.people} чел. · ${demo?'учебный пример':'по указанным суммам'}.`;const gap=$('gap');gap.hidden=false;gap.className='gap'+(result.gap?' short':'');gap.textContent=result.gap?`До выбранного плана не хватает ${money(result.gap)}.`:`Доступных денег хватает. Сверх плана: ${money(result.surplus)}.`;
@@ -69,12 +80,12 @@ function renderResult(){
  }catch(e){hideResult(e.message);}
 }
 function hideResult(message){result=null;$('spending-breakdown').replaceChildren();for(const id of ['required','monthly','total','deposit-total','reserve-total'])$(id).textContent='—';$('gap').hidden=true;$('calc-status').textContent=message;$('schedule').innerHTML='<tr><td colspan="5">Расчёт появится после заполнения корректных сумм и курсов.</td></tr>';}
-function currentPriceEntries(){const p=prices?.cities?.[city.id];if(!p)return [];return Object.entries(p.items??{}).filter(([,x])=>ageDays(x.sourceDate)>=-1&&ageDays(x.sourceDate)<=45&&x.currency===city.currency);}
+function currentPriceEntries(){return freshPriceEntries(prices,city);}
 function renderPriceState(){const p=prices?.cities?.[city.id],entries=currentPriceEntries();$('apply-prices').disabled=!entries.length;
- $('price-status').textContent=entries.length?`Доступно ${entries.length} ориентиров. Месяц цен: ${p.sourceDate.slice(0,7)}. Получены: ${displayDate(p.fetchedAt)}. Заполняются только пустые поля.`:p?'Сохранённые ориентиры устарели или недостаточно данных. Введите цену из свежего предложения.':'Автоматические цены по городу пока не подключены. Введите свои суммы; старые цены из гайда не подставляются.';
+ $('price-status').textContent=entries.length?`Доступно ${entries.length} рыночных ориентиров. Получены: ${displayDate(p.fetchedAt)}. Цены подставляются и обновляются автоматически для направлений с данными; ваши правки сохраняются. Билеты, страховку и другие личные расходы уточните отдельно.`:p?'Сохранённые ориентиры устарели или недостаточно данных. Введите цену из свежего предложения.':'Для этого направления источник расходов пока не подключён. Курсы валют загружаются автоматически. Укажите недостающие цены; пустые статьи не считаются бесплатными.';
 }
 $('apply-prices').addEventListener('click',()=>{
- for(const [key,x]of currentPriceEntries()){const l=lines.find(l=>l.id===key);if(l&&!l.amount.trim()){Object.assign(l,{amount:x.amount,currency:x.currency,origin:'estimate',sourceDate:x.sourceDate,samples:x.samples,basis:x.basis,period:x.period,enabled:true});}}
+ if(!demo)applyMarketPrices(lines,prices,city,{fillCleared:true});
  renderLines();renderResult();
 });
 function renderRates(){const fresh=rateFresh(snapshot);$('fx-status').textContent=snapshot?.effectiveDate?`Курсы ЦБ на ${displayDate(snapshot.effectiveDate)}. Получены ${displayDate(snapshot.fetchedAt)}.${fresh?'':' Данные устарели — автоматическая конвертация отключена.'}`:'Не удалось получить свежие курсы. Можно указать свои ниже.';$('fx-status').className=fresh?'':'bad-status';
@@ -82,7 +93,7 @@ function renderRates(){const fresh=rateFresh(snapshot);$('fx-status').textConten
  for(const e of document.querySelectorAll('[data-rate]')){e.value=overrides[e.dataset.rate]??'';e.addEventListener('input',()=>{overrides[e.dataset.rate]=e.value.trim();renderResult();});}
 }
 async function reload(){const button=$('refresh');button.disabled=true;button.textContent='Проверяем…';
- try{const [r,p]=await Promise.all([fetch(`./data/rates.json?t=${Date.now()}`,{cache:'no-store'}),fetch(`./data/prices.json?t=${Date.now()}`,{cache:'no-store'})]);if(!r.ok||!p.ok)throw new Error();snapshot=await r.json();prices=await p.json();renderRates();renderPriceState();renderResult();}
+ try{const [r,p]=await Promise.all([fetch(`./data/rates.json?t=${Date.now()}`,{cache:'no-store'}),fetch(`./data/prices.json?t=${Date.now()}`,{cache:'no-store'})]);if(!r.ok||!p.ok)throw new Error();snapshot=await r.json();prices=await p.json();if(!demo){saveDestination();applyAllDestinations(drafts,cities,prices,blankDestination);lines=drafts.get(city.id).lines;renderLines();}renderRates();renderPriceState();renderResult();}
  catch{$('fx-status').textContent='Не удалось загрузить обновление. Сохранённые даты не менялись; проверьте соединение или укажите курс вручную.';$('fx-status').className='bad-status';renderPriceState();renderResult();}
  finally{button.disabled=false;button.textContent='Проверить обновления';}
 }
@@ -103,7 +114,7 @@ $('example').addEventListener('click',()=>{
 });
 $('clear-example').addEventListener('click',()=>{
  if(beforeExample){drafts.clear();for(const [id,p]of beforeExample.drafts)drafts.set(id,p);city=cities.find(c=>c.id===beforeExample.city);$('city').value=city.id;for(const [id,value]of Object.entries(beforeExample.values))$(id).value=value;const p=drafts.get(city.id);lines=p.lines;$('advance').value=p.advance;beforeExample=null;}
- demo=false;$('demo-notice').hidden=true;renderLines();renderPriceState();renderResult();
+ demo=false;applyAllDestinations(drafts,cities,prices,blankDestination);lines=drafts.get(city.id).lines;$('demo-notice').hidden=true;renderLines();renderPriceState();renderResult();
 });
 function renderComparison(){
  saveDestination();
@@ -111,14 +122,15 @@ function renderComparison(){
   const p=drafts.get(c.id)??blankDestination(c),missing=p.lines.filter(l=>l.enabled&&!l.amount.trim());
   if(missing.length)return {c,missing:missing.length};
   try{
-   for(const l of p.lines.filter(l=>l.enabled&&l.origin==='estimate'))if(ageDays(l.sourceDate)>45||ageDays(l.sourceDate)<-1)throw new Error('Цены устарели — обновите ориентиры.');
+   for(const l of p.lines.filter(l=>l.enabled&&l.origin==='estimate'))if(!priceFresh(l))throw new Error('Цены устарели — обновите ориентиры.');
    const input={...getInput(),...p,lines:[...p.lines,{id:'obligations',label:'Личные обязательства',period:'monthly',enabled:true,...readMoney('obligations')}]};
    return {c,r:assess(input,selectedRates(input))};
   }catch(e){return {c,error:e.message};}
  });
  outcomes.sort((a,b)=>a.r&&b.r?a.r.gap-b.r.gap||a.r.required-b.r.required:a.r?-1:b.r?1:0);
  const ready=outcomes.filter(o=>o.r),fits=ready.filter(o=>o.r.fits).length;
- $('comparison-status').textContent=demo?'Учебные цены · не рыночная оценка':ready.length?`Рассчитано ${ready.length} из ${cities.length}. По бюджету подходят: ${fits}.`:'Для сравнения нужны цены направлений. Источник рыночных цен пока не подключён.';
+ const automatic=cities.filter(c=>freshPriceEntries(prices,c).length).length;
+ $('comparison-status').textContent=demo?'Учебные цены · не рыночная оценка':ready.length?`Рассчитано ${ready.length} из ${cities.length}. По бюджету подходят: ${fits}.`:automatic?`Рыночные ориентиры загружены для ${automatic} из ${cities.length} направлений. Дополните недостающие расходы для полного расчёта.`:'Для автоматического сравнения требуется источник цен. Сейчас загружаются только курсы валют.';
  const escape=t=>String(t).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
  $('country-cards').innerHTML=outcomes.map(({c,r,missing,error})=>{
   const [town,country]=c.label.split(' · ');

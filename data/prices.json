@@ -1,1 +1,96 @@
-{"provider":"Numbeo","status":"not_connected","fetchedAt":null,"cities":{},"note":"Для автоматических рыночных ориентиров нужен лицензированный источник. До подключения вводите цены ваших предложений."}
+{
+  "provider": "Открытые сайты / доступные API",
+  "status": "partial",
+  "fetchedAt": null,
+  "cities": {
+    "danang": {
+      "currency": "VND",
+      "items": {
+        "rent": {
+          "amount": "10250000.00",
+          "currency": "VND",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "listing_sample",
+          "samples": 6,
+          "source": "Da Nang Apartments",
+          "sourceUrl": "https://danangapartment.net/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-24T16:44:42.305Z",
+          "maxCheckAgeDays": 7,
+          "low": 5800000,
+          "high": 16000000,
+          "evidence": [
+            {
+              "amount": 12500000,
+              "sourceDate": "2026-09-24",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-thien-ke-an-hai-69"
+            },
+            {
+              "amount": 16000000,
+              "sourceDate": "2026-09-24",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-thi-sach-hoa-cuong-2"
+            },
+            {
+              "amount": 9500000,
+              "sourceDate": "2026-09-24",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-an-thuong-17-ngu-hanh-son-43"
+            },
+            {
+              "amount": 10500000,
+              "sourceDate": "2026-09-24",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-an-thuong-10-ngu-hanh-son-42"
+            },
+            {
+              "amount": 5800000,
+              "sourceDate": "2026-09-24",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-hoang-thi-loan-thanh-khe-5"
+            },
+            {
+              "amount": 10000000,
+              "sourceDate": "2026-09-24",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-phuoc-lan-hoa-xuan-16"
+            }
+          ],
+          "note": "Медиана небольшой выборки: 6 объявлений квартир с одной спальней из текущей первой страницы каталога. Не средняя по всему городу. Депозит, срок аренды и дополнительные счета уточняются отдельно; наличие подтвердите у владельца."
+        },
+        "phone": {
+          "amount": "199000.00",
+          "currency": "VND",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "official_tariff",
+          "samples": 1,
+          "source": "VNPT / VinaPhone",
+          "sourceUrl": "https://vnpt.vn/di-dong/vip199/",
+          "sourceDate": null,
+          "checkedAt": "2026-09-24T16:44:42.305Z",
+          "maxCheckAgeDays": 7,
+          "note": "VIP199: опубликованная цена месячного пакета, с НДС. Это выбранный тариф, не средняя стоимость связи. Новые предоплатные SIM: подключение в первые 30 дней; для действующих есть условия. SIM, активация и услуги сверх пакета отдельно. Ограничение переноса номера — 540 дней. Доступность для вашей SIM уточните у оператора."
+        }
+      },
+      "fetchedAt": "2026-09-24T16:44:42.305Z"
+    },
+    "nhatrang": {
+      "currency": "VND",
+      "items": {
+        "phone": {
+          "amount": "199000.00",
+          "currency": "VND",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "official_tariff",
+          "samples": 1,
+          "source": "VNPT / VinaPhone",
+          "sourceUrl": "https://vnpt.vn/di-dong/vip199/",
+          "sourceDate": null,
+          "checkedAt": "2026-09-24T16:44:42.305Z",
+          "maxCheckAgeDays": 7,
+          "note": "VIP199: опубликованная цена месячного пакета, с НДС. Это выбранный тариф, не средняя стоимость связи. Новые предоплатные SIM: подключение в первые 30 дней; для действующих есть условия. SIM, активация и услуги сверх пакета отдельно. Ограничение переноса номера — 540 дней. Доступность для вашей SIM уточните у оператора."
+        }
+      },
+      "fetchedAt": "2026-09-24T16:44:42.305Z"
+    }
+  },
+  "note": "Частичное покрытие: аренда Дананга и мобильный тариф Вьетнама. Остальные расходы требуют отдельных источников или ваших сумм. Даты хранятся у каждой цены."
+}
