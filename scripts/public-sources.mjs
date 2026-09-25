@@ -66,7 +66,11 @@ export async function collectPublicPrices(previous,get,now=new Date()){
  try{
   const cohort=await rentalCohort(previous,get,now),links=cohort.urls;
   const rows=[];let failed=0;
-  for(const url of links){try{rows.push(parseApartment(await (await get(url)).text(),url,now));}catch{failed++;}}
+  // Keep requests bounded, with at most three in flight for the same public site.
+  for(let offset=0;offset<links.length;offset+=3){
+   const batch=await Promise.allSettled(links.slice(offset,offset+3).map(async url=>parseApartment(await (await get(url)).text(),url,now)));
+   for(const result of batch)if(result.status==='fulfilled')rows.push(result.value);else failed++;
+  }
   if(failed)throw new Error('Incomplete listing sample');
   const value=rentQuote(rows,now);
   if(value)value.cohortStartedAt=cohort.createdAt;
