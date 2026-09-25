@@ -1,6 +1,6 @@
 import {assess} from './compare.mjs';
 import {rateFresh,ageDays,decimal} from './calculate.mjs';
-import {freshPriceEntries} from './market-prices.mjs';
+import {freshPriceEntries,rentalForMonths} from './market-prices.mjs';
 export const categories={rent:'Жильё',food:'Питание',utilities:'Коммунальные услуги',internet:'Домашний интернет',phone:'Мобильная связь',transport:'Транспорт'};
 export function validatePersonal(personal){
  for(const key of ['savings','income','obligations'])decimal(personal[key]);
@@ -10,6 +10,11 @@ export function scenario(city,personal,prices,rates,now=new Date()){
  validatePersonal(personal);
  if(!rateFresh(rates,now))return {city,unavailable:'Курсы валют устарели или недоступны. Ждём обновления.'};
  const entries=new Map(freshPriceEntries(prices,city,now));
+ if(entries.has('rent')){
+  const rental=rentalForMonths(entries.get('rent'),personal.months);
+  if(!rental)return {city,unavailable:'Меньше трёх объявлений после исключения неподходящих сроков аренды.'};
+  entries.set('rent',rental);
+ }
  const missing=Object.keys(categories).filter(key=>!entries.has(key));
  if(missing.length)return {city,unavailable:`Нет свежих цен: ${missing.map(key=>categories[key].toLowerCase()).join(', ')}.`};
  const lines=Object.entries(categories).map(([id,label])=>({id,label,...entries.get(id),enabled:true}));

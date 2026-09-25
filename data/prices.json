@@ -5,55 +5,152 @@
   "cities": {
     "danang": {
       "currency": "VND",
-      "fetchedAt": "2026-09-25T04:49:58.349Z",
+      "fetchedAt": "2026-09-25T09:35:57.057Z",
       "items": {
         "rent": {
-          "amount": "8900000.00",
+          "amount": "10000000.00",
           "currency": "VND",
           "basis": "household",
           "period": "monthly",
           "kind": "listing_sample",
-          "samples": 6,
+          "samples": 21,
           "source": "Da Nang Apartments",
           "sourceUrl": "https://danangapartment.net/",
           "sourceDate": "2026-09-25",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "maxCheckAgeDays": 7,
           "low": 6000000,
-          "high": 14000000,
+          "high": 17000000,
           "evidence": [
             {
-              "amount": 6000000,
+              "amount": 9500000,
               "sourceDate": "2026-09-25",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-phan-dang-luu-hoa-cuong-25"
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-an-thuong-17-ngu-hanh-son-44",
+              "minimumMonths": null
             },
             {
-              "amount": 14000000,
+              "amount": 9500000,
               "sourceDate": "2026-09-25",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-dinh-an-hai-16"
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-an-thuong-17-ngu-hanh-son-45",
+              "minimumMonths": null
             },
             {
-              "amount": 7800000,
+              "amount": 6500000,
               "sourceDate": "2026-09-25",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-ly-thai-tong-thanh-khe-31"
-            },
-            {
-              "amount": 10000000,
-              "sourceDate": "2026-09-25",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-tan-trung-son-tra"
-            },
-            {
-              "amount": 10000000,
-              "sourceDate": "2026-09-25",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-son-thuy-8-ngu-hanh-son-20"
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-bau-cau-3-hoa-xuan-2",
+              "minimumMonths": null
             },
             {
               "amount": 7000000,
               "sourceDate": "2026-09-25",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-con-dau-16-hoa-xuan-28"
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-con-dau-16-hoa-xuan-28",
+              "minimumMonths": null
+            },
+            {
+              "amount": 15900000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-dinh-dat-an-hai-38",
+              "minimumMonths": null
+            },
+            {
+              "amount": 15900000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-dinh-dat-an-hai-39",
+              "minimumMonths": null
+            },
+            {
+              "amount": 8000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-ha-dac-an-hai-19",
+              "minimumMonths": null
+            },
+            {
+              "amount": 15000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-khue-my-dong-3-ngu-hanh-son-47",
+              "minimumMonths": null
+            },
+            {
+              "amount": 17000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-huu-khanh-ngu-hanh-son-33",
+              "minimumMonths": null
+            },
+            {
+              "amount": 13000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-huu-trac-an-hai-39",
+              "minimumMonths": null
+            },
+            {
+              "amount": 10000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-tan-trung-son-tra",
+              "minimumMonths": null
+            },
+            {
+              "amount": 8000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-van-huu-ngu-hanh-son-29",
+              "minimumMonths": null
+            },
+            {
+              "amount": 7800000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-ly-thai-tong-thanh-khe-31",
+              "minimumMonths": null
+            },
+            {
+              "amount": 14000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-dinh-an-hai-16",
+              "minimumMonths": null
+            },
+            {
+              "amount": 14500000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-thien-ke-an-hai-70",
+              "minimumMonths": null
+            },
+            {
+              "amount": 11000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-van-thoai-an-hai-29",
+              "minimumMonths": null
+            },
+            {
+              "amount": 6000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-phan-dang-luu-hoa-cuong-25",
+              "minimumMonths": null
+            },
+            {
+              "amount": 7500000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-phan-thanh-thanh-khe-19",
+              "minimumMonths": null
+            },
+            {
+              "amount": 10000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-son-thuy-8-ngu-hanh-son-20",
+              "minimumMonths": null
+            },
+            {
+              "amount": 9000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-tran-dai-nghia-ngu-hanh-son-17",
+              "minimumMonths": null
+            },
+            {
+              "amount": 10500000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-trinh-loi-ngu-hanh-son-38",
+              "minimumMonths": null
             }
           ],
-          "note": "Медиана небольшой выборки: 6 объявлений квартир с одной спальней из текущей первой страницы каталога. Не средняя по всему городу. Депозит, срок аренды и дополнительные счета уточняются отдельно; наличие подтвердите у владельца."
+          "note": "Медиана фиксированной выборки: 21 объявлений квартир с одной спальней в разных районах. Проверяем те же объекты в течение 7 дней, затем пересобираем выборку из первых трёх страниц (до 24 кандидатов). Это не средняя по городу; изменение состава и цены возможно при снятии объявления. Минимальный срок, депозит, включённые счета и наличие подтвердите у владельца. Если срок в объявлении не указан, пригодность для короткой аренды не подтверждена.",
+          "cohortStartedAt": "2026-09-25T05:01:21.627Z"
         },
         "food": {
           "amount": "184.21",
@@ -64,8 +161,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -169,8 +266,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -183,8 +280,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -198,7 +295,7 @@
           "source": "VNPT / VinaPhone",
           "sourceUrl": "https://vnpt.vn/di-dong/vip199/",
           "sourceDate": null,
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "maxCheckAgeDays": 7,
           "note": "VIP199: опубликованная цена месячного пакета, с НДС. Это выбранный тариф, не средняя стоимость связи. Новые предоплатные SIM: подключение в первые 30 дней; для действующих есть условия. SIM, активация и услуги сверх пакета отдельно. Ограничение переноса номера — 540 дней. Доступность для вашей SIM уточните у оператора."
         },
@@ -211,8 +308,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -233,7 +330,7 @@
     },
     "nhatrang": {
       "currency": "VND",
-      "fetchedAt": "2026-09-25T04:49:58.349Z",
+      "fetchedAt": "2026-09-25T09:35:57.057Z",
       "items": {
         "rent": {
           "amount": "195.41",
@@ -244,8 +341,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -258,8 +355,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -363,8 +460,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -377,8 +474,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -392,7 +489,7 @@
           "source": "VNPT / VinaPhone",
           "sourceUrl": "https://vnpt.vn/di-dong/vip199/",
           "sourceDate": null,
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "maxCheckAgeDays": 7,
           "note": "VIP199: опубликованная цена месячного пакета, с НДС. Это выбранный тариф, не средняя стоимость связи. Новые предоплатные SIM: подключение в первые 30 дней; для действующих есть условия. SIM, активация и услуги сверх пакета отдельно. Ограничение переноса номера — 540 дней. Доступность для вашей SIM уточните у оператора."
         },
@@ -405,8 +502,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -427,7 +524,7 @@
     },
     "bangkok": {
       "currency": "THB",
-      "fetchedAt": "2026-09-25T04:49:58.349Z",
+      "fetchedAt": "2026-09-25T09:35:57.057Z",
       "items": {
         "rent": {
           "amount": "361.78",
@@ -438,8 +535,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -452,8 +549,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -557,8 +654,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -571,8 +668,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -585,43 +682,45 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
           "components": []
         },
         "transport": {
-          "amount": "139.80",
-          "currency": "USD",
+          "amount": "1320.00",
+          "currency": "THB",
+          "source": "Thailand.go.th / Ministry of Transport",
+          "sourceUrl": "https://www.thailand.go.th/useful-information-detail/009_127?hl=en",
+          "kind": "official_tariff",
+          "samples": 1,
           "basis": "person",
           "period": "monthly",
-          "kind": "city_reference",
-          "samples": null,
-          "source": "Nomadlio",
-          "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
-          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "sourceDate": "2023-07-12",
+          "checkedAt": "2026-09-25T09:33:26.703Z",
+          "note": "20 поездок по 5 км на большом такси по счётчику: первый километр уже входит в начальную плату, оплачиваются ещё 4 км. Без пробок, вызова, платных дорог и аэропортовых сборов. Это опубликованная государственная сетка, не цена Grab. Статья обновлена в 2023 году; проверка страницы не подтверждает отсутствие более нового тарифа. Ручная сверка с официальной страницей 25.09.2026: автоматический доступ ограничен. Максимальный срок использования без повторной сверки — 30 дней.",
           "components": [
             {
-              "label": "Посадка в такси",
+              "label": "Первый километр",
               "quantity": 20,
-              "unitAmount": "1.04",
-              "currency": "USD"
+              "unitAmount": "40.00",
+              "currency": "THB"
             },
             {
-              "label": "Расстояние, 1 км",
-              "quantity": 100,
-              "unitAmount": "1.19",
-              "currency": "USD"
+              "label": "Дополнительный километр",
+              "quantity": 80,
+              "unitAmount": "6.50",
+              "currency": "THB"
             }
-          ]
+          ],
+          "verificationMethod": "manual",
+          "reviewDueAt": "2026-10-25T09:33:26.703Z"
         }
       }
     },
     "bali": {
       "currency": "IDR",
-      "fetchedAt": "2026-09-25T04:49:58.349Z",
+      "fetchedAt": "2026-09-25T09:35:57.057Z",
       "items": {
         "rent": {
           "amount": "815.10",
@@ -632,8 +731,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -646,8 +745,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -751,8 +850,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Источник публикует коммунальные услуги для 85 м². Это ориентир для этой площади; фактический счёт небольшой квартиры может отличаться.",
           "components": []
         },
@@ -765,8 +864,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -779,8 +878,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
           "components": []
         },
@@ -793,8 +892,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -815,7 +914,7 @@
     },
     "kl": {
       "currency": "MYR",
-      "fetchedAt": "2026-09-25T04:49:58.349Z",
+      "fetchedAt": "2026-09-25T09:35:57.057Z",
       "items": {
         "rent": {
           "amount": "352.26",
@@ -826,8 +925,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -840,8 +939,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -945,8 +1044,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -959,8 +1058,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -973,8 +1072,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
           "components": []
         },
@@ -987,8 +1086,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1009,7 +1108,7 @@
     },
     "tbilisi": {
       "currency": "GEL",
-      "fetchedAt": "2026-09-25T04:49:58.349Z",
+      "fetchedAt": "2026-09-25T09:35:57.057Z",
       "items": {
         "rent": {
           "amount": "497.86",
@@ -1020,8 +1119,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -1034,8 +1133,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -1139,8 +1238,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -1153,24 +1252,23 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
         "phone": {
-          "amount": "11.56",
-          "currency": "USD",
+          "amount": "45.00",
+          "currency": "GEL",
+          "source": "Magti",
+          "sourceUrl": "https://www.magticom.ge/en/mobile/tariffs/unlimited-cocktails",
+          "kind": "official_tariff",
+          "samples": 1,
           "basis": "person",
           "period": "monthly",
-          "kind": "city_reference",
-          "samples": null,
-          "source": "Nomadlio",
-          "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
-          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
-          "components": []
+          "sourceDate": null,
+          "checkedAt": "2026-09-25T09:35:57.057Z",
+          "note": "Everything Unlimited: пакет на 30 дней, 50 ГБ по правилам добросовестного использования. На странице отмечен как Promo; цена продления и доступность проверяются у оператора. SIM и подключение отдельно."
         },
         "transport": {
           "amount": "100.80",
@@ -1181,8 +1279,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1203,7 +1301,7 @@
     },
     "yerevan": {
       "currency": "AMD",
-      "fetchedAt": "2026-09-25T04:49:58.349Z",
+      "fetchedAt": "2026-09-25T09:35:57.057Z",
       "items": {
         "rent": {
           "amount": "543.83",
@@ -1214,8 +1312,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -1228,8 +1326,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -1333,8 +1431,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -1347,24 +1445,23 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
         "phone": {
-          "amount": "8.89",
-          "currency": "USD",
+          "amount": "3000.00",
+          "currency": "AMD",
+          "source": "Ucom",
+          "sourceUrl": "https://www.ucom.am/en/prepaid-levelup",
+          "kind": "official_tariff",
+          "samples": 1,
           "basis": "person",
           "period": "monthly",
-          "kind": "city_reference",
-          "samples": null,
-          "source": "Nomadlio",
-          "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
-          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
-          "components": []
+          "sourceDate": null,
+          "checkedAt": "2026-09-25T09:35:57.057Z",
+          "note": "Level Up+ 3000: пакет на 30 дней. Используется обычная цена, без акций со смартфоном. Разовая активация и услуги сверх пакета отдельно; ограничения раздачи интернета и объём трафика проверяйте у оператора."
         },
         "transport": {
           "amount": "64.20",
@@ -1375,8 +1472,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1397,7 +1494,7 @@
     },
     "belgrade": {
       "currency": "RSD",
-      "fetchedAt": "2026-09-25T04:49:58.349Z",
+      "fetchedAt": "2026-09-25T09:35:57.057Z",
       "items": {
         "rent": {
           "amount": "501.40",
@@ -1408,8 +1505,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -1422,8 +1519,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -1527,8 +1624,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -1541,24 +1638,23 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
         "phone": {
-          "amount": "22.22",
-          "currency": "USD",
+          "amount": "1000.00",
+          "currency": "RSD",
+          "source": "A1 Serbia",
+          "sourceUrl": "https://a1.rs/privatni/prepaid/mesecni_planovi",
+          "kind": "official_tariff",
+          "samples": 1,
           "basis": "person",
           "period": "monthly",
-          "kind": "city_reference",
-          "samples": null,
-          "source": "Nomadlio",
-          "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
-          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
-          "components": []
+          "sourceDate": null,
+          "checkedAt": "2026-09-25T09:35:57.057Z",
+          "note": "Mega plan: обычная цена пакета на 30 дней, без временной скидки на SIM или перенос номера. Объём трафика и условия — на странице оператора. Требуется регистрация SIM; подключение отдельно."
         },
         "transport": {
           "amount": "156.00",
@@ -1569,8 +1665,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1591,7 +1687,7 @@
     },
     "antalya": {
       "currency": "TRY",
-      "fetchedAt": "2026-09-25T04:49:58.349Z",
+      "fetchedAt": "2026-09-25T09:35:57.057Z",
       "items": {
         "rent": {
           "amount": "411.86",
@@ -1602,8 +1698,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -1616,8 +1712,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -1721,8 +1817,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Источник публикует коммунальные услуги для 85 м². Это ориентир для этой площади; фактический счёт небольшой квартиры может отличаться.",
           "components": []
         },
@@ -1735,8 +1831,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -1749,8 +1845,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
           "components": []
         },
@@ -1763,8 +1859,8 @@
           "samples": null,
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-25T04:49:58.349Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T09:35:57.057Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1784,5 +1880,31 @@
       }
     }
   },
-  "note": "Рыночные ориентиры из открытых страниц, дополненные прямыми объявлениями и тарифами. Дата страницы не подтверждает свежесть каждого исходного наблюдения. Точные предложения проверяйте перед оплатой."
+  "note": "Рыночные ориентиры из открытых страниц, дополненные прямыми объявлениями и тарифами. Дата страницы не подтверждает свежесть каждого исходного наблюдения. Точные предложения проверяйте перед оплатой.",
+  "rentalCohort": {
+    "createdAt": "2026-09-25T05:01:21.627Z",
+    "urls": [
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-an-thuong-17-ngu-hanh-son-44",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-an-thuong-17-ngu-hanh-son-45",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-bau-cau-3-hoa-xuan-2",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-con-dau-16-hoa-xuan-28",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-dinh-dat-an-hai-38",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-dinh-dat-an-hai-39",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-ha-dac-an-hai-19",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-khue-my-dong-3-ngu-hanh-son-47",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-huu-khanh-ngu-hanh-son-33",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-huu-trac-an-hai-39",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-tan-trung-son-tra",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-van-huu-ngu-hanh-son-29",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-ly-thai-tong-thanh-khe-31",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-dinh-an-hai-16",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-thien-ke-an-hai-70",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-van-thoai-an-hai-29",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-phan-dang-luu-hoa-cuong-25",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-phan-thanh-thanh-khe-19",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-son-thuy-8-ngu-hanh-son-20",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-tran-dai-nghia-ngu-hanh-son-17",
+      "https://danangapartment.net/en/rentals/1-bedroom-apartment-trinh-loi-ngu-hanh-son-38"
+    ]
+  }
 }

@@ -1,9 +1,21 @@
 import {ageDays,decimal} from './calculate.mjs';
 
+export function rentalForMonths(quote,months){
+ if(quote?.kind!=='listing_sample')return quote;
+ const rows=(quote.evidence??[]).filter(row=>row.minimumMonths==null||row.minimumMonths<=Number(months));
+ if(rows.length<3)return null;
+ const amounts=rows.map(row=>row.amount).sort((a,b)=>a-b),mid=Math.floor(amounts.length/2);
+ return {...quote,amount:(amounts.length%2?amounts[mid]:(amounts[mid-1]+amounts[mid])/2).toFixed(2),samples:rows.length,evidence:rows,
+  low:amounts[0],high:amounts.at(-1),excludedForTerm:(quote.evidence?.length??0)-rows.length,
+  unknownTermCount:rows.filter(row=>row.minimumMonths==null).length};
+}
+
 export function priceFresh(quote,now=new Date()){
  const direct=['official_tariff','listing_sample','city_reference'].includes(quote.kind);
  const checkedAge=ageDays(quote.checkedAt,now),sourceAge=ageDays(quote.sourceDate,now);
- if(direct&&!(checkedAge>=0&&checkedAge<=7))return false;
+ const reviewWindow=quote.kind==='official_tariff'&&quote.verificationMethod==='manual'?30:7;
+ if(reviewWindow===30&&(!Number.isFinite(Date.parse(quote.reviewDueAt))||now.getTime()>Date.parse(quote.reviewDueAt)))return false;
+ if(direct&&!(checkedAge>=0&&checkedAge<=reviewWindow))return false;
  return quote.kind==='official_tariff'||sourceAge>=0&&sourceAge<=45;
 }
 
@@ -13,7 +25,7 @@ export function freshPriceEntries(snapshot,city,now=new Date()){
  return Object.entries(record.items??{}).filter(([,quote])=>{
   try{
    const reference=quote.kind==='city_reference'&&quote.source==='Nomadlio'&&quote.currency==='USD'&&quote.samples===null;
-   return priceFresh(quote,now)&&(reference||quote.currency===city.currency)&&decimal(quote.amount)>0n
+   return !quote.needsVerification&&priceFresh(quote,now)&&(reference||quote.currency===city.currency)&&decimal(quote.amount)>0n
     &&(reference||Number.isInteger(quote.samples)&&quote.samples>=(quote.kind==='official_tariff'?1:3))
     &&['household','person'].includes(quote.basis)&&quote.period==='monthly';
   }catch{return false;}

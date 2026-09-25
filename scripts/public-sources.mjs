@@ -3,7 +3,20 @@ export const rentUrl='https://danangapartment.net/';
 export const phoneUrl='https://vnpt.vn/di-dong/vip199/';
 export function pageText(html){return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/\s+/g,' ').trim();}
 export function listingLinks(html){
- return [...new Set([...html.matchAll(/href="((?:\/en)?\/rentals\/1-bedroom-apartment-[a-z0-9-]+)"/g)].map(m=>new URL(m[1],rentUrl).href))].slice(0,6);
+ return [...new Set([...html.matchAll(/href="((?:\/en)?\/rentals\/(?:1-bedroom-apartment|apartment)-[a-z0-9-]+)"/g)].map(m=>new URL('/en'+m[1].replace(/^\/en/,''),rentUrl).href))].sort().slice(0,24);
+}
+export function cohortValid(cohort,now){return ageDays(cohort?.createdAt,now)>=0&&ageDays(cohort?.createdAt,now)<7&&Array.isArray(cohort?.urls)&&cohort.urls.length>0&&cohort.urls.length<=24&&cohort.urls.every(url=>/^https:\/\/danangapartment\.net\/en\/rentals\/(?:1-bedroom-apartment|apartment)-[a-z0-9-]+$/.test(url));}
+export async function rentalCohort(previous,get,now){
+ if(cohortValid(previous.rentalCohort,now))return previous.rentalCohort;
+ let url=rentUrl;const visited=new Set(),urls=new Set();
+ for(let page=0;page<3&&url;page++){
+  visited.add(url);const html=await (await get(url)).text();
+  for(const link of listingLinks(html))urls.add(link);
+  const pages=[...html.matchAll(/href="([^"<>]+)"/g)].map(m=>{try{return new URL(m[1].replaceAll('&amp;','&'),rentUrl);}catch{return null;}}).filter(u=>u?.origin===new URL(rentUrl).origin&&u.pathname==='/'&&/^[23]$/.test(u.searchParams.get('page')??'')).sort((a,b)=>Number(a.searchParams.get('page'))-Number(b.searchParams.get('page')));
+  url=pages.find(u=>!visited.has(u.href))?.href;
+ }
+ if(!urls.size)throw new Error('No rental cohort candidates');
+ return {createdAt:now.toISOString(),urls:[...urls].sort().slice(0,24)};
 }
 export function parseApartment(html,url,now=new Date()){
  const records=[...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)].flatMap(m=>{try{return [JSON.parse(m[1])];}catch{return [];}});
@@ -19,7 +32,8 @@ export function parseApartment(html,url,now=new Date()){
  if(ageDays(sourceDate,now)<0||ageDays(sourceDate,now)>45||!/(?:monthly rent|\/month|per month)/i.test(text))return null;
  // A lower bound or a short-stay rate must not be represented as a fixed monthly asking price.
  if(/ranging|\bfrom\s+[\d,]+\s+(?:to|VND)|\d[\d,]*\s*(?:-|–|to)\s*\d[\d,]*\s*VND/i.test(apartment.description??''))return null;
- return {amount:offer.price,sourceDate,url};
+ const term=String(apartment.description??'').match(/(?:minimum (?:rental|lease|stay)(?: period)?|minimum|at least)\s*[:\-]?\s*(\d+)\s*months?/i);
+ return {amount:offer.price,sourceDate,url,minimumMonths:term?Number(term[1]):null};
 }
 export function rentQuote(listings,now=new Date()){
  const rows=[...new Map(listings.filter(Boolean).map(x=>[x.url,x])).values()];
@@ -29,7 +43,7 @@ export function rentQuote(listings,now=new Date()){
  return {amount:median.toFixed(2),currency:'VND',basis:'household',period:'monthly',kind:'listing_sample',samples:rows.length,
   source:'Da Nang Apartments',sourceUrl:rentUrl,sourceDate:rows.map(x=>x.sourceDate).sort()[0],checkedAt:now.toISOString(),maxCheckAgeDays:7,
   low:amounts[0],high:amounts.at(-1),evidence:rows,
-  note:`Медиана небольшой выборки: ${rows.length} объявлений квартир с одной спальней из текущей первой страницы каталога. Не средняя по всему городу. Депозит, срок аренды и дополнительные счета уточняются отдельно; наличие подтвердите у владельца.`};
+  note:`Медиана фиксированной выборки: ${rows.length} объявлений квартир с одной спальней в разных районах. Проверяем те же объекты в течение 7 дней, затем пересобираем выборку из первых трёх страниц (до 24 кандидатов). Это не средняя по городу; изменение состава и цены возможно при снятии объявления. Минимальный срок, депозит, включённые счета и наличие подтвердите у владельца. Если срок в объявлении не указан, пригодность для короткой аренды не подтверждена.`};
 }
 export function parseVnpt(html,now=new Date()){
  const name=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
@@ -50,12 +64,13 @@ export async function collectPublicPrices(previous,get,now=new Date()){
   for(const city of ['danang','nhatrang'])put(city,'phone',plan);
  }catch{errors.push('VNPT: source fetch or format failed; previous check date retained.');}
  try{
-  const links=listingLinks(await (await get(rentUrl)).text());
-  if(!links.length)throw new Error('No listing links');
+  const cohort=await rentalCohort(previous,get,now),links=cohort.urls;
   const rows=[];let failed=0;
   for(const url of links){try{rows.push(parseApartment(await (await get(url)).text(),url,now));}catch{failed++;}}
   if(failed)throw new Error('Incomplete listing sample');
-  put('danang','rent',rentQuote(rows,now));
+  const value=rentQuote(rows,now);
+  if(value)value.cohortStartedAt=cohort.createdAt;
+  put('danang','rent',value);next.rentalCohort=cohort;
  }catch{errors.push('Da Nang Apartments: source fetch or format failed; previous check date retained.');}
  next.provider='Открытые сайты / доступные API';next.status='partial';
  next.note='Частичное покрытие: аренда Дананга и мобильный тариф Вьетнама. Остальные расходы требуют отдельных источников или ваших сумм. Даты хранятся у каждой цены.';

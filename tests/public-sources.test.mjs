@@ -25,9 +25,9 @@ test('official tariff has a verification date, not an invented source modificati
  assert.equal(priceFresh(plan,new Date('2026-10-03')),false);
  assert.equal(freshPriceEntries({cities:{danang:{currency:'VND',items:{phone:plan}}}},{id:'danang',currency:'VND'},now).length,1);
 });
-test('crawler is bounded to six public apartment pages on its configured domain',()=>{
- const html=Array.from({length:12},(_,i)=>`<a href="/en/rentals/1-bedroom-apartment-test-${i}">Stay</a>`).join('')+'<a href="https://other.test/rentals/1-bedroom-apartment-x">Wrong site</a>';
- assert.equal(listingLinks(html).length,6);assert.ok(listingLinks(html).every(x=>x.startsWith('https://danangapartment.net/')));
+test('crawler is bounded to 24 canonical apartment URLs on its configured domain',()=>{
+ const html=Array.from({length:40},(_,i)=>`<a href="/en/rentals/1-bedroom-apartment-test-${i}">Stay</a>`).join('')+'<a href="https://other.test/rentals/1-bedroom-apartment-x">Wrong site</a>';
+ assert.equal(listingLinks(html).length,24);assert.ok(listingLinks(html).every(x=>x.startsWith('https://danangapartment.net/')));
 });
 test('upstream failures preserve old prices and check dates',async()=>{
  const previous={cities:{danang:{currency:'VND',items:{phone:{amount:'1',checkedAt:'2026-01-01'}}}}};
