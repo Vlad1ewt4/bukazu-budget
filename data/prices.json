@@ -1,13 +1,14 @@
 {
-  "provider": "Открытые сайты / доступные API",
-  "status": "partial",
+  "provider": "Открытые сайты",
+  "status": "connected",
   "fetchedAt": null,
   "cities": {
     "danang": {
       "currency": "VND",
+      "fetchedAt": "2026-09-25T04:34:07.852Z",
       "items": {
         "rent": {
-          "amount": "10250000.00",
+          "amount": "12750000.00",
           "currency": "VND",
           "basis": "household",
           "period": "monthly",
@@ -15,44 +16,177 @@
           "samples": 6,
           "source": "Da Nang Apartments",
           "sourceUrl": "https://danangapartment.net/",
-          "sourceDate": "2026-09-24",
-          "checkedAt": "2026-09-24T16:44:42.305Z",
+          "sourceDate": "2026-09-25",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
           "maxCheckAgeDays": 7,
-          "low": 5800000,
-          "high": 16000000,
+          "low": 9000000,
+          "high": 17000000,
           "evidence": [
             {
-              "amount": 12500000,
-              "sourceDate": "2026-09-24",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-thien-ke-an-hai-69"
+              "amount": 11000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-van-thoai-an-hai-29"
             },
             {
-              "amount": 16000000,
-              "sourceDate": "2026-09-24",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-thi-sach-hoa-cuong-2"
+              "amount": 9000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-tran-dai-nghia-ngu-hanh-son-17"
             },
             {
-              "amount": 9500000,
-              "sourceDate": "2026-09-24",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-an-thuong-17-ngu-hanh-son-43"
+              "amount": 17000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-le-huu-khanh-ngu-hanh-son-33"
             },
             {
-              "amount": 10500000,
-              "sourceDate": "2026-09-24",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-an-thuong-10-ngu-hanh-son-42"
+              "amount": 15000000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-khue-my-dong-3-ngu-hanh-son-47"
             },
             {
-              "amount": 5800000,
-              "sourceDate": "2026-09-24",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-hoang-thi-loan-thanh-khe-5"
+              "amount": 14500000,
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-thien-ke-an-hai-70"
             },
             {
               "amount": 10000000,
-              "sourceDate": "2026-09-24",
-              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-nguyen-phuoc-lan-hoa-xuan-16"
+              "sourceDate": "2026-09-25",
+              "url": "https://danangapartment.net/en/rentals/1-bedroom-apartment-an-thuong-12-ngu-hanh-son-14"
             }
           ],
           "note": "Медиана небольшой выборки: 6 объявлений квартир с одной спальней из текущей первой страницы каталога. Не средняя по всему городу. Депозит, срок аренды и дополнительные счета уточняются отдельно; наличие подтвердите у владельца."
+        },
+        "food": {
+          "amount": "184.21",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
+          "components": [
+            {
+              "label": "Молоко, 1 л",
+              "quantity": 8,
+              "unitAmount": "1.40",
+              "currency": "USD"
+            },
+            {
+              "label": "Хлеб, 500 г",
+              "quantity": 8,
+              "unitAmount": "0.76",
+              "currency": "USD"
+            },
+            {
+              "label": "Рис, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.01",
+              "currency": "USD"
+            },
+            {
+              "label": "Яйца, 12 шт.",
+              "quantity": 3,
+              "unitAmount": "1.44",
+              "currency": "USD"
+            },
+            {
+              "label": "Куриное филе, 1 кг",
+              "quantity": 4,
+              "unitAmount": "2.96",
+              "currency": "USD"
+            },
+            {
+              "label": "Говядина, 1 кг",
+              "quantity": 1,
+              "unitAmount": "11.80",
+              "currency": "USD"
+            },
+            {
+              "label": "Сыр, 1 кг",
+              "quantity": 1,
+              "unitAmount": "9.52",
+              "currency": "USD"
+            },
+            {
+              "label": "Яблоки, 1 кг",
+              "quantity": 3,
+              "unitAmount": "2.35",
+              "currency": "USD"
+            },
+            {
+              "label": "Бананы, 1 кг",
+              "quantity": 3,
+              "unitAmount": "0.98",
+              "currency": "USD"
+            },
+            {
+              "label": "Помидоры, 1 кг",
+              "quantity": 4,
+              "unitAmount": "1.08",
+              "currency": "USD"
+            },
+            {
+              "label": "Картофель, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.14",
+              "currency": "USD"
+            },
+            {
+              "label": "Лук, 1 кг",
+              "quantity": 1,
+              "unitAmount": "1.21",
+              "currency": "USD"
+            },
+            {
+              "label": "Вода, 1,5 л",
+              "quantity": 20,
+              "unitAmount": "0.51",
+              "currency": "USD"
+            },
+            {
+              "label": "Приём пищи в недорогом кафе",
+              "quantity": 20,
+              "unitAmount": "3.88",
+              "currency": "USD"
+            },
+            {
+              "label": "Кофе в кафе",
+              "quantity": 12,
+              "unitAmount": "1.64",
+              "currency": "USD"
+            }
+          ]
+        },
+        "utilities": {
+          "amount": "37.00",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
+          "components": []
+        },
+        "internet": {
+          "amount": "8.95",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
+          "components": []
         },
         "phone": {
           "amount": "199000.00",
@@ -64,16 +198,190 @@
           "source": "VNPT / VinaPhone",
           "sourceUrl": "https://vnpt.vn/di-dong/vip199/",
           "sourceDate": null,
-          "checkedAt": "2026-09-24T16:44:42.305Z",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
           "maxCheckAgeDays": 7,
           "note": "VIP199: опубликованная цена месячного пакета, с НДС. Это выбранный тариф, не средняя стоимость связи. Новые предоплатные SIM: подключение в первые 30 дней; для действующих есть условия. SIM, активация и услуги сверх пакета отдельно. Ограничение переноса номера — 540 дней. Доступность для вашей SIM уточните у оператора."
+        },
+        "transport": {
+          "amount": "89.60",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "components": [
+            {
+              "label": "Посадка в такси",
+              "quantity": 20,
+              "unitAmount": "0.88",
+              "currency": "USD"
+            },
+            {
+              "label": "Расстояние, 1 км",
+              "quantity": 100,
+              "unitAmount": "0.72",
+              "currency": "USD"
+            }
+          ]
         }
-      },
-      "fetchedAt": "2026-09-24T16:44:42.305Z"
+      }
     },
     "nhatrang": {
       "currency": "VND",
+      "fetchedAt": "2026-09-25T04:34:07.852Z",
       "items": {
+        "rent": {
+          "amount": "195.41",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
+          "components": []
+        },
+        "food": {
+          "amount": "172.97",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
+          "components": [
+            {
+              "label": "Молоко, 1 л",
+              "quantity": 8,
+              "unitAmount": "1.36",
+              "currency": "USD"
+            },
+            {
+              "label": "Хлеб, 500 г",
+              "quantity": 8,
+              "unitAmount": "0.55",
+              "currency": "USD"
+            },
+            {
+              "label": "Рис, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.63",
+              "currency": "USD"
+            },
+            {
+              "label": "Яйца, 12 шт.",
+              "quantity": 3,
+              "unitAmount": "1.37",
+              "currency": "USD"
+            },
+            {
+              "label": "Куриное филе, 1 кг",
+              "quantity": 4,
+              "unitAmount": "3.10",
+              "currency": "USD"
+            },
+            {
+              "label": "Говядина, 1 кг",
+              "quantity": 1,
+              "unitAmount": "11.53",
+              "currency": "USD"
+            },
+            {
+              "label": "Сыр, 1 кг",
+              "quantity": 1,
+              "unitAmount": "18.90",
+              "currency": "USD"
+            },
+            {
+              "label": "Яблоки, 1 кг",
+              "quantity": 3,
+              "unitAmount": "2.23",
+              "currency": "USD"
+            },
+            {
+              "label": "Бананы, 1 кг",
+              "quantity": 3,
+              "unitAmount": "0.79",
+              "currency": "USD"
+            },
+            {
+              "label": "Помидоры, 1 кг",
+              "quantity": 4,
+              "unitAmount": "0.87",
+              "currency": "USD"
+            },
+            {
+              "label": "Картофель, 1 кг",
+              "quantity": 3,
+              "unitAmount": "0.65",
+              "currency": "USD"
+            },
+            {
+              "label": "Лук, 1 кг",
+              "quantity": 1,
+              "unitAmount": "0.65",
+              "currency": "USD"
+            },
+            {
+              "label": "Вода, 1,5 л",
+              "quantity": 20,
+              "unitAmount": "0.39",
+              "currency": "USD"
+            },
+            {
+              "label": "Приём пищи в недорогом кафе",
+              "quantity": 20,
+              "unitAmount": "3.09",
+              "currency": "USD"
+            },
+            {
+              "label": "Кофе в кафе",
+              "quantity": 12,
+              "unitAmount": "1.76",
+              "currency": "USD"
+            }
+          ]
+        },
+        "utilities": {
+          "amount": "16.00",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
+          "components": []
+        },
+        "internet": {
+          "amount": "9.31",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
+          "components": []
+        },
         "phone": {
           "amount": "199000.00",
           "currency": "VND",
@@ -84,13 +392,1397 @@
           "source": "VNPT / VinaPhone",
           "sourceUrl": "https://vnpt.vn/di-dong/vip199/",
           "sourceDate": null,
-          "checkedAt": "2026-09-24T16:44:42.305Z",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
           "maxCheckAgeDays": 7,
           "note": "VIP199: опубликованная цена месячного пакета, с НДС. Это выбранный тариф, не средняя стоимость связи. Новые предоплатные SIM: подключение в первые 30 дней; для действующих есть условия. SIM, активация и услуги сверх пакета отдельно. Ограничение переноса номера — 540 дней. Доступность для вашей SIM уточните у оператора."
+        },
+        "transport": {
+          "amount": "66.80",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "components": [
+            {
+              "label": "Посадка в такси",
+              "quantity": 20,
+              "unitAmount": "0.39",
+              "currency": "USD"
+            },
+            {
+              "label": "Расстояние, 1 км",
+              "quantity": 100,
+              "unitAmount": "0.59",
+              "currency": "USD"
+            }
+          ]
         }
-      },
-      "fetchedAt": "2026-09-24T16:44:42.305Z"
+      }
+    },
+    "bangkok": {
+      "currency": "THB",
+      "fetchedAt": "2026-09-25T04:34:07.852Z",
+      "items": {
+        "rent": {
+          "amount": "361.78",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
+          "components": []
+        },
+        "food": {
+          "amount": "260.81",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
+          "components": [
+            {
+              "label": "Молоко, 1 л",
+              "quantity": 8,
+              "unitAmount": "1.98",
+              "currency": "USD"
+            },
+            {
+              "label": "Хлеб, 500 г",
+              "quantity": 8,
+              "unitAmount": "1.50",
+              "currency": "USD"
+            },
+            {
+              "label": "Рис, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.41",
+              "currency": "USD"
+            },
+            {
+              "label": "Яйца, 12 шт.",
+              "quantity": 3,
+              "unitAmount": "2.31",
+              "currency": "USD"
+            },
+            {
+              "label": "Куриное филе, 1 кг",
+              "quantity": 4,
+              "unitAmount": "2.38",
+              "currency": "USD"
+            },
+            {
+              "label": "Говядина, 1 кг",
+              "quantity": 1,
+              "unitAmount": "8.95",
+              "currency": "USD"
+            },
+            {
+              "label": "Сыр, 1 кг",
+              "quantity": 1,
+              "unitAmount": "14.21",
+              "currency": "USD"
+            },
+            {
+              "label": "Яблоки, 1 кг",
+              "quantity": 3,
+              "unitAmount": "2.88",
+              "currency": "USD"
+            },
+            {
+              "label": "Бананы, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.68",
+              "currency": "USD"
+            },
+            {
+              "label": "Помидоры, 1 кг",
+              "quantity": 4,
+              "unitAmount": "2.33",
+              "currency": "USD"
+            },
+            {
+              "label": "Картофель, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.58",
+              "currency": "USD"
+            },
+            {
+              "label": "Лук, 1 кг",
+              "quantity": 1,
+              "unitAmount": "1.39",
+              "currency": "USD"
+            },
+            {
+              "label": "Вода, 1,5 л",
+              "quantity": 20,
+              "unitAmount": "0.51",
+              "currency": "USD"
+            },
+            {
+              "label": "Приём пищи в недорогом кафе",
+              "quantity": 20,
+              "unitAmount": "5.75",
+              "currency": "USD"
+            },
+            {
+              "label": "Кофе в кафе",
+              "quantity": 12,
+              "unitAmount": "2.90",
+              "currency": "USD"
+            }
+          ]
+        },
+        "utilities": {
+          "amount": "54.00",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
+          "components": []
+        },
+        "internet": {
+          "amount": "13.68",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
+          "components": []
+        },
+        "phone": {
+          "amount": "13.05",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
+          "components": []
+        },
+        "transport": {
+          "amount": "139.80",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "components": [
+            {
+              "label": "Посадка в такси",
+              "quantity": 20,
+              "unitAmount": "1.04",
+              "currency": "USD"
+            },
+            {
+              "label": "Расстояние, 1 км",
+              "quantity": 100,
+              "unitAmount": "1.19",
+              "currency": "USD"
+            }
+          ]
+        }
+      }
+    },
+    "bali": {
+      "currency": "IDR",
+      "fetchedAt": "2026-09-25T04:34:07.852Z",
+      "items": {
+        "rent": {
+          "amount": "815.10",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
+          "components": []
+        },
+        "food": {
+          "amount": "231.42",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
+          "components": [
+            {
+              "label": "Молоко, 1 л",
+              "quantity": 8,
+              "unitAmount": "1.70",
+              "currency": "USD"
+            },
+            {
+              "label": "Хлеб, 500 г",
+              "quantity": 8,
+              "unitAmount": "2.42",
+              "currency": "USD"
+            },
+            {
+              "label": "Рис, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.15",
+              "currency": "USD"
+            },
+            {
+              "label": "Яйца, 12 шт.",
+              "quantity": 3,
+              "unitAmount": "2.02",
+              "currency": "USD"
+            },
+            {
+              "label": "Куриное филе, 1 кг",
+              "quantity": 4,
+              "unitAmount": "4.36",
+              "currency": "USD"
+            },
+            {
+              "label": "Говядина, 1 кг",
+              "quantity": 1,
+              "unitAmount": "11.10",
+              "currency": "USD"
+            },
+            {
+              "label": "Сыр, 1 кг",
+              "quantity": 1,
+              "unitAmount": "16.66",
+              "currency": "USD"
+            },
+            {
+              "label": "Яблоки, 1 кг",
+              "quantity": 3,
+              "unitAmount": "3.68",
+              "currency": "USD"
+            },
+            {
+              "label": "Бананы, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.62",
+              "currency": "USD"
+            },
+            {
+              "label": "Помидоры, 1 кг",
+              "quantity": 4,
+              "unitAmount": "2.19",
+              "currency": "USD"
+            },
+            {
+              "label": "Картофель, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.85",
+              "currency": "USD"
+            },
+            {
+              "label": "Лук, 1 кг",
+              "quantity": 1,
+              "unitAmount": "2.34",
+              "currency": "USD"
+            },
+            {
+              "label": "Вода, 1,5 л",
+              "quantity": 20,
+              "unitAmount": "0.69",
+              "currency": "USD"
+            },
+            {
+              "label": "Приём пищи в недорогом кафе",
+              "quantity": 20,
+              "unitAmount": "3.46",
+              "currency": "USD"
+            },
+            {
+              "label": "Кофе в кафе",
+              "quantity": 12,
+              "unitAmount": "2.35",
+              "currency": "USD"
+            }
+          ]
+        },
+        "utilities": {
+          "amount": "86.89",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Источник публикует коммунальные услуги для 85 м². Это ориентир для этой площади; фактический счёт небольшой квартиры может отличаться.",
+          "components": []
+        },
+        "internet": {
+          "amount": "23.50",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
+          "components": []
+        },
+        "phone": {
+          "amount": "3.96",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
+          "components": []
+        },
+        "transport": {
+          "amount": "53.00",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "components": [
+            {
+              "label": "Посадка в такси",
+              "quantity": 20,
+              "unitAmount": "0.45",
+              "currency": "USD"
+            },
+            {
+              "label": "Расстояние, 1 км",
+              "quantity": 100,
+              "unitAmount": "0.44",
+              "currency": "USD"
+            }
+          ]
+        }
+      }
+    },
+    "kl": {
+      "currency": "MYR",
+      "fetchedAt": "2026-09-25T04:34:07.852Z",
+      "items": {
+        "rent": {
+          "amount": "352.26",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
+          "components": []
+        },
+        "food": {
+          "amount": "228.13",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
+          "components": [
+            {
+              "label": "Молоко, 1 л",
+              "quantity": 8,
+              "unitAmount": "1.88",
+              "currency": "USD"
+            },
+            {
+              "label": "Хлеб, 500 г",
+              "quantity": 8,
+              "unitAmount": "0.95",
+              "currency": "USD"
+            },
+            {
+              "label": "Рис, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.56",
+              "currency": "USD"
+            },
+            {
+              "label": "Яйца, 12 шт.",
+              "quantity": 3,
+              "unitAmount": "2.45",
+              "currency": "USD"
+            },
+            {
+              "label": "Куриное филе, 1 кг",
+              "quantity": 4,
+              "unitAmount": "3.43",
+              "currency": "USD"
+            },
+            {
+              "label": "Говядина, 1 кг",
+              "quantity": 1,
+              "unitAmount": "8.81",
+              "currency": "USD"
+            },
+            {
+              "label": "Сыр, 1 кг",
+              "quantity": 1,
+              "unitAmount": "10.16",
+              "currency": "USD"
+            },
+            {
+              "label": "Яблоки, 1 кг",
+              "quantity": 3,
+              "unitAmount": "2.77",
+              "currency": "USD"
+            },
+            {
+              "label": "Бананы, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.53",
+              "currency": "USD"
+            },
+            {
+              "label": "Помидоры, 1 кг",
+              "quantity": 4,
+              "unitAmount": "1.52",
+              "currency": "USD"
+            },
+            {
+              "label": "Картофель, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.18",
+              "currency": "USD"
+            },
+            {
+              "label": "Лук, 1 кг",
+              "quantity": 1,
+              "unitAmount": "1.25",
+              "currency": "USD"
+            },
+            {
+              "label": "Вода, 1,5 л",
+              "quantity": 20,
+              "unitAmount": "0.62",
+              "currency": "USD"
+            },
+            {
+              "label": "Приём пищи в недорогом кафе",
+              "quantity": 20,
+              "unitAmount": "4.46",
+              "currency": "USD"
+            },
+            {
+              "label": "Кофе в кафе",
+              "quantity": 12,
+              "unitAmount": "2.95",
+              "currency": "USD"
+            }
+          ]
+        },
+        "utilities": {
+          "amount": "47.00",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
+          "components": []
+        },
+        "internet": {
+          "amount": "25.52",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
+          "components": []
+        },
+        "phone": {
+          "amount": "13.95",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
+          "components": []
+        },
+        "transport": {
+          "amount": "135.60",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "components": [
+            {
+              "label": "Посадка в такси",
+              "quantity": 20,
+              "unitAmount": "1.13",
+              "currency": "USD"
+            },
+            {
+              "label": "Расстояние, 1 км",
+              "quantity": 100,
+              "unitAmount": "1.13",
+              "currency": "USD"
+            }
+          ]
+        }
+      }
+    },
+    "tbilisi": {
+      "currency": "GEL",
+      "fetchedAt": "2026-09-25T04:34:07.852Z",
+      "items": {
+        "rent": {
+          "amount": "497.86",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
+          "components": []
+        },
+        "food": {
+          "amount": "315.42",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
+          "components": [
+            {
+              "label": "Молоко, 1 л",
+              "quantity": 8,
+              "unitAmount": "1.89",
+              "currency": "USD"
+            },
+            {
+              "label": "Хлеб, 500 г",
+              "quantity": 8,
+              "unitAmount": "0.61",
+              "currency": "USD"
+            },
+            {
+              "label": "Рис, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.88",
+              "currency": "USD"
+            },
+            {
+              "label": "Яйца, 12 шт.",
+              "quantity": 3,
+              "unitAmount": "2.46",
+              "currency": "USD"
+            },
+            {
+              "label": "Куриное филе, 1 кг",
+              "quantity": 4,
+              "unitAmount": "4.78",
+              "currency": "USD"
+            },
+            {
+              "label": "Говядина, 1 кг",
+              "quantity": 1,
+              "unitAmount": "9.37",
+              "currency": "USD"
+            },
+            {
+              "label": "Сыр, 1 кг",
+              "quantity": 1,
+              "unitAmount": "5.89",
+              "currency": "USD"
+            },
+            {
+              "label": "Яблоки, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.25",
+              "currency": "USD"
+            },
+            {
+              "label": "Бананы, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.55",
+              "currency": "USD"
+            },
+            {
+              "label": "Помидоры, 1 кг",
+              "quantity": 4,
+              "unitAmount": "1.92",
+              "currency": "USD"
+            },
+            {
+              "label": "Картофель, 1 кг",
+              "quantity": 3,
+              "unitAmount": "0.68",
+              "currency": "USD"
+            },
+            {
+              "label": "Лук, 1 кг",
+              "quantity": 1,
+              "unitAmount": "0.66",
+              "currency": "USD"
+            },
+            {
+              "label": "Вода, 1,5 л",
+              "quantity": 20,
+              "unitAmount": "0.67",
+              "currency": "USD"
+            },
+            {
+              "label": "Приём пищи в недорогом кафе",
+              "quantity": 20,
+              "unitAmount": "8.89",
+              "currency": "USD"
+            },
+            {
+              "label": "Кофе в кафе",
+              "quantity": 12,
+              "unitAmount": "3.17",
+              "currency": "USD"
+            }
+          ]
+        },
+        "utilities": {
+          "amount": "56.00",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
+          "components": []
+        },
+        "internet": {
+          "amount": "14.24",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
+          "components": []
+        },
+        "phone": {
+          "amount": "11.56",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
+          "components": []
+        },
+        "transport": {
+          "amount": "100.80",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "components": [
+            {
+              "label": "Посадка в такси",
+              "quantity": 20,
+              "unitAmount": "1.44",
+              "currency": "USD"
+            },
+            {
+              "label": "Расстояние, 1 км",
+              "quantity": 100,
+              "unitAmount": "0.72",
+              "currency": "USD"
+            }
+          ]
+        }
+      }
+    },
+    "yerevan": {
+      "currency": "AMD",
+      "fetchedAt": "2026-09-25T04:34:07.852Z",
+      "items": {
+        "rent": {
+          "amount": "543.83",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
+          "components": []
+        },
+        "food": {
+          "amount": "337.10",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
+          "components": [
+            {
+              "label": "Молоко, 1 л",
+              "quantity": 8,
+              "unitAmount": "1.84",
+              "currency": "USD"
+            },
+            {
+              "label": "Хлеб, 500 г",
+              "quantity": 8,
+              "unitAmount": "0.82",
+              "currency": "USD"
+            },
+            {
+              "label": "Рис, 1 кг",
+              "quantity": 3,
+              "unitAmount": "2.27",
+              "currency": "USD"
+            },
+            {
+              "label": "Яйца, 12 шт.",
+              "quantity": 3,
+              "unitAmount": "3.02",
+              "currency": "USD"
+            },
+            {
+              "label": "Куриное филе, 1 кг",
+              "quantity": 4,
+              "unitAmount": "5.72",
+              "currency": "USD"
+            },
+            {
+              "label": "Говядина, 1 кг",
+              "quantity": 1,
+              "unitAmount": "12.25",
+              "currency": "USD"
+            },
+            {
+              "label": "Сыр, 1 кг",
+              "quantity": 1,
+              "unitAmount": "6.73",
+              "currency": "USD"
+            },
+            {
+              "label": "Яблоки, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.42",
+              "currency": "USD"
+            },
+            {
+              "label": "Бананы, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.76",
+              "currency": "USD"
+            },
+            {
+              "label": "Помидоры, 1 кг",
+              "quantity": 4,
+              "unitAmount": "2.73",
+              "currency": "USD"
+            },
+            {
+              "label": "Картофель, 1 кг",
+              "quantity": 3,
+              "unitAmount": "0.88",
+              "currency": "USD"
+            },
+            {
+              "label": "Лук, 1 кг",
+              "quantity": 1,
+              "unitAmount": "0.67",
+              "currency": "USD"
+            },
+            {
+              "label": "Вода, 1,5 л",
+              "quantity": 20,
+              "unitAmount": "0.63",
+              "currency": "USD"
+            },
+            {
+              "label": "Приём пищи в недорогом кафе",
+              "quantity": 20,
+              "unitAmount": "8.89",
+              "currency": "USD"
+            },
+            {
+              "label": "Кофе в кафе",
+              "quantity": 12,
+              "unitAmount": "3.66",
+              "currency": "USD"
+            }
+          ]
+        },
+        "utilities": {
+          "amount": "66.00",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
+          "components": []
+        },
+        "internet": {
+          "amount": "19.30",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
+          "components": []
+        },
+        "phone": {
+          "amount": "8.89",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
+          "components": []
+        },
+        "transport": {
+          "amount": "64.20",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "components": [
+            {
+              "label": "Посадка в такси",
+              "quantity": 20,
+              "unitAmount": "1.66",
+              "currency": "USD"
+            },
+            {
+              "label": "Расстояние, 1 км",
+              "quantity": 100,
+              "unitAmount": "0.31",
+              "currency": "USD"
+            }
+          ]
+        }
+      }
+    },
+    "belgrade": {
+      "currency": "RSD",
+      "fetchedAt": "2026-09-25T04:34:07.852Z",
+      "items": {
+        "rent": {
+          "amount": "501.40",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
+          "components": []
+        },
+        "food": {
+          "amount": "361.27",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
+          "components": [
+            {
+              "label": "Молоко, 1 л",
+              "quantity": 8,
+              "unitAmount": "1.32",
+              "currency": "USD"
+            },
+            {
+              "label": "Хлеб, 500 г",
+              "quantity": 8,
+              "unitAmount": "0.88",
+              "currency": "USD"
+            },
+            {
+              "label": "Рис, 1 кг",
+              "quantity": 3,
+              "unitAmount": "2.65",
+              "currency": "USD"
+            },
+            {
+              "label": "Яйца, 12 шт.",
+              "quantity": 3,
+              "unitAmount": "2.74",
+              "currency": "USD"
+            },
+            {
+              "label": "Куриное филе, 1 кг",
+              "quantity": 4,
+              "unitAmount": "5.35",
+              "currency": "USD"
+            },
+            {
+              "label": "Говядина, 1 кг",
+              "quantity": 1,
+              "unitAmount": "11.84",
+              "currency": "USD"
+            },
+            {
+              "label": "Сыр, 1 кг",
+              "quantity": 1,
+              "unitAmount": "7.71",
+              "currency": "USD"
+            },
+            {
+              "label": "Яблоки, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.16",
+              "currency": "USD"
+            },
+            {
+              "label": "Бананы, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.79",
+              "currency": "USD"
+            },
+            {
+              "label": "Помидоры, 1 кг",
+              "quantity": 4,
+              "unitAmount": "2.07",
+              "currency": "USD"
+            },
+            {
+              "label": "Картофель, 1 кг",
+              "quantity": 3,
+              "unitAmount": "0.92",
+              "currency": "USD"
+            },
+            {
+              "label": "Лук, 1 кг",
+              "quantity": 1,
+              "unitAmount": "0.74",
+              "currency": "USD"
+            },
+            {
+              "label": "Вода, 1,5 л",
+              "quantity": 20,
+              "unitAmount": "0.68",
+              "currency": "USD"
+            },
+            {
+              "label": "Приём пищи в недорогом кафе",
+              "quantity": 20,
+              "unitAmount": "11.14",
+              "currency": "USD"
+            },
+            {
+              "label": "Кофе в кафе",
+              "quantity": 12,
+              "unitAmount": "2.46",
+              "currency": "USD"
+            }
+          ]
+        },
+        "utilities": {
+          "amount": "121.00",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
+          "components": []
+        },
+        "internet": {
+          "amount": "27.34",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
+          "components": []
+        },
+        "phone": {
+          "amount": "22.22",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
+          "components": []
+        },
+        "transport": {
+          "amount": "156.00",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "components": [
+            {
+              "label": "Посадка в такси",
+              "quantity": 20,
+              "unitAmount": "2.95",
+              "currency": "USD"
+            },
+            {
+              "label": "Расстояние, 1 км",
+              "quantity": 100,
+              "unitAmount": "0.97",
+              "currency": "USD"
+            }
+          ]
+        }
+      }
+    },
+    "antalya": {
+      "currency": "TRY",
+      "fetchedAt": "2026-09-25T04:34:07.852Z",
+      "items": {
+        "rent": {
+          "amount": "411.86",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
+          "components": []
+        },
+        "food": {
+          "amount": "314.92",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
+          "components": [
+            {
+              "label": "Молоко, 1 л",
+              "quantity": 8,
+              "unitAmount": "0.93",
+              "currency": "USD"
+            },
+            {
+              "label": "Хлеб, 500 г",
+              "quantity": 8,
+              "unitAmount": "0.96",
+              "currency": "USD"
+            },
+            {
+              "label": "Рис, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.64",
+              "currency": "USD"
+            },
+            {
+              "label": "Яйца, 12 шт.",
+              "quantity": 3,
+              "unitAmount": "1.51",
+              "currency": "USD"
+            },
+            {
+              "label": "Куриное филе, 1 кг",
+              "quantity": 4,
+              "unitAmount": "5.31",
+              "currency": "USD"
+            },
+            {
+              "label": "Говядина, 1 кг",
+              "quantity": 1,
+              "unitAmount": "17.48",
+              "currency": "USD"
+            },
+            {
+              "label": "Сыр, 1 кг",
+              "quantity": 1,
+              "unitAmount": "9.41",
+              "currency": "USD"
+            },
+            {
+              "label": "Яблоки, 1 кг",
+              "quantity": 3,
+              "unitAmount": "0.84",
+              "currency": "USD"
+            },
+            {
+              "label": "Бананы, 1 кг",
+              "quantity": 3,
+              "unitAmount": "1.79",
+              "currency": "USD"
+            },
+            {
+              "label": "Помидоры, 1 кг",
+              "quantity": 4,
+              "unitAmount": "1.10",
+              "currency": "USD"
+            },
+            {
+              "label": "Картофель, 1 кг",
+              "quantity": 3,
+              "unitAmount": "0.55",
+              "currency": "USD"
+            },
+            {
+              "label": "Лук, 1 кг",
+              "quantity": 1,
+              "unitAmount": "0.48",
+              "currency": "USD"
+            },
+            {
+              "label": "Вода, 1,5 л",
+              "quantity": 20,
+              "unitAmount": "0.35",
+              "currency": "USD"
+            },
+            {
+              "label": "Приём пищи в недорогом кафе",
+              "quantity": 20,
+              "unitAmount": "9.21",
+              "currency": "USD"
+            },
+            {
+              "label": "Кофе в кафе",
+              "quantity": 12,
+              "unitAmount": "3.05",
+              "currency": "USD"
+            }
+          ]
+        },
+        "utilities": {
+          "amount": "55.27",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Источник публикует коммунальные услуги для 85 м². Это ориентир для этой площади; фактический счёт небольшой квартиры может отличаться.",
+          "components": []
+        },
+        "internet": {
+          "amount": "11.19",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
+          "components": []
+        },
+        "phone": {
+          "amount": "8.57",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
+          "components": []
+        },
+        "transport": {
+          "amount": "81.80",
+          "currency": "USD",
+          "basis": "person",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
+          "sourceDate": "2026-09-24",
+          "checkedAt": "2026-09-25T04:34:07.852Z",
+          "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
+          "components": [
+            {
+              "label": "Посадка в такси",
+              "quantity": 20,
+              "unitAmount": "0.79",
+              "currency": "USD"
+            },
+            {
+              "label": "Расстояние, 1 км",
+              "quantity": 100,
+              "unitAmount": "0.66",
+              "currency": "USD"
+            }
+          ]
+        }
+      }
     }
   },
-  "note": "Частичное покрытие: аренда Дананга и мобильный тариф Вьетнама. Остальные расходы требуют отдельных источников или ваших сумм. Даты хранятся у каждой цены."
+  "note": "Рыночные ориентиры из открытых страниц, дополненные прямыми объявлениями и тарифами. Дата страницы не подтверждает свежесть каждого исходного наблюдения. Точные предложения проверяйте перед оплатой."
 }

@@ -4,6 +4,7 @@ import https from 'node:https';
 import {cities} from '../src/catalog.mjs';
 import {parseCbr,crossMyr,normalizePrices} from './providers.mjs';
 import {collectPublicPrices} from './public-sources.mjs';
+import {collectCityReferences} from './city-references.mjs';
 const root=new URL('../data/',import.meta.url),now=new Date();
 async function read(name){return JSON.parse(await readFile(new URL(name,root),'utf8'));}
 async function save(name,data){const target=fileURLToPath(new URL(name,root));await writeFile(target+'.tmp',JSON.stringify(data,null,2)+'\n');await rename(target+'.tmp',target);}
@@ -47,8 +48,9 @@ if(key&&process.env.NUMBEO_DISPLAY_LICENSE_CONFIRMED==='true'){
 }else console.log('Numbeo not connected; collecting the configured public websites.');
 try{
  const publicResult=await collectPublicPrices(await read('prices.json'),get,now);
- await save('prices.json',publicResult.snapshot);
- for(const message of publicResult.errors){failures++;console.error(message);}
+ const references=await collectCityReferences(publicResult.snapshot,get,now);
+ await save('prices.json',references.snapshot);
+ for(const message of [...publicResult.errors,...references.errors]){failures++;console.error(message);}
  console.log('Public websites checked. Each price retains its own source and verification date.');
 }catch{failures++;console.error('Public source update failed; previous data retained.');}
 if(failures)process.exitCode=1;

@@ -1,7 +1,7 @@
 import {ageDays,decimal} from './calculate.mjs';
 
 export function priceFresh(quote,now=new Date()){
- const direct=['official_tariff','listing_sample'].includes(quote.kind);
+ const direct=['official_tariff','listing_sample','city_reference'].includes(quote.kind);
  const checkedAge=ageDays(quote.checkedAt,now),sourceAge=ageDays(quote.sourceDate,now);
  if(direct&&!(checkedAge>=0&&checkedAge<=7))return false;
  return quote.kind==='official_tariff'||sourceAge>=0&&sourceAge<=45;
@@ -12,8 +12,9 @@ export function freshPriceEntries(snapshot,city,now=new Date()){
  if(!record||record.currency!==city.currency)return [];
  return Object.entries(record.items??{}).filter(([,quote])=>{
   try{
-   return priceFresh(quote,now)&&quote.currency===city.currency&&decimal(quote.amount)>0n
-    &&Number.isInteger(quote.samples)&&quote.samples>=(quote.kind==='official_tariff'?1:3)
+   const reference=quote.kind==='city_reference'&&quote.source==='Nomadlio'&&quote.currency==='USD'&&quote.samples===null;
+   return priceFresh(quote,now)&&(reference||quote.currency===city.currency)&&decimal(quote.amount)>0n
+    &&(reference||Number.isInteger(quote.samples)&&quote.samples>=(quote.kind==='official_tariff'?1:3))
     &&['household','person'].includes(quote.basis)&&quote.period==='monthly';
   }catch{return false;}
  });

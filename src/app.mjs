@@ -1,147 +1,69 @@
-import {calculate,ageDays,rateFresh,decimal} from './calculate.mjs';
-import {assess} from './compare.mjs';
-import {cities,currencies,makeLines} from './catalog.mjs';
-import {freshPriceEntries,applyMarketPrices,applyAllDestinations,priceFresh} from './market-prices.mjs';
-const $=id=>document.getElementById(id),fmt=new Intl.NumberFormat('ru-RU',{style:'currency',currency:'RUB',maximumFractionDigits:2}),money=n=>fmt.format(n/100);
-const displayDate=d=>d?new Date(d).toLocaleDateString('ru-RU'):'нет данных';
-let city=cities[0],lines=makeLines(city.currency),snapshot=null,prices=null,result=null,demo=false;
-const drafts=new Map(),overrides={};
-const moneyIds=['deposit','exitReserve','savings','income','obligations'];
-const destinationMoney=['deposit','exitReserve'];
-const moneyDefaults={obligations:{label:'Личные обязательства в месяц',container:'obligations-field'},deposit:{label:'Возвратный депозит',container:'deposit-field'},exitReserve:{label:'Резерв на срочный выезд',container:'exit-field'},savings:{label:'Уже доступно денег',container:'savings-field'},income:{label:'Чистый доход за месяц',container:'income-field'}};
-const options=selected=>currencies.map(c=>`<option ${c===selected?'selected':''}>${c}</option>`).join('');
-for(const c of cities){const o=document.createElement('option');o.value=c.id;o.textContent=c.label;$('city').append(o);}
-for(const id of moneyIds){const def=moneyDefaults[id];$(def.container).innerHTML=`<label>${def.label}<div class="money-pair"><input id="${id}" aria-label="${def.label}: сумма" inputmode="decimal" value="0"><select id="${id}-currency" aria-label="${def.label}: валюта">${options('RUB')}</select></div></label>`;}
-function renderLines(){
- $('lines').innerHTML=lines.map(l=>`<article class="expense ${l.enabled?'':'excluded'}" data-line="${l.id}"><label class="expense-title"><input type="checkbox" data-field="enabled" ${l.enabled?'checked':''} ${l.id==='rent'?'disabled':''}>${l.label}</label><div class="expense-controls"><label>Сумма<input data-field="amount" inputmode="decimal" aria-label="${l.label}: сумма" placeholder="Введите цену" ${!l.enabled?'disabled':''}></label><label>Валюта<select data-field="currency" aria-label="${l.label}: валюта" ${!l.enabled?'disabled':''}>${options(l.currency)}</select></label><label>На кого<select data-field="basis" aria-label="${l.label}: на кого" ${!l.enabled||l.id==='rent'?'disabled':''}><option value="household" ${l.basis==='household'?'selected':''}>На всех</option><option value="person" ${l.basis==='person'?'selected':''}>На человека</option></select></label><label>Как часто<select data-field="period" aria-label="${l.label}: периодичность" ${!l.enabled||l.id==='rent'?'disabled':''}><option value="monthly" ${l.period==='monthly'?'selected':''}>В месяц</option><option value="once" ${l.period==='once'?'selected':''}>Один раз</option></select></label></div><p class="hint">${l.hint}</p><p class="source-note" data-origin></p></article>`).join('');
- for(const l of lines){const el=document.querySelector(`[data-line="${l.id}"]`);el.querySelector('[data-field=amount]').value=l.amount;setOrigin(l,el);}
- $('housing-link').href=city.rent;
- $('housing-community').hidden=city.id!=='danang';
+import {cities} from './catalog.mjs';
+import {scenario,validatePersonal} from './scenarios.mjs';
+const $=id=>document.getElementById(id);
+const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const money=value=>new Intl.NumberFormat('ru-RU',{style:'currency',currency:'RUB',maximumFractionDigits:0}).format(value/100);
+const signed=value=>(value>0?'+':'')+money(value);
+const date=value=>value?new Intl.DateTimeFormat('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric'}).format(new Date(value)):'не указана';
+function link(url,label){try{const u=new URL(url);return u.protocol==='https:'?`<a href="${esc(u.href)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`:esc(label);}catch{return esc(label);}}
+let data=null,submitted=false;
+async function loadData(){
+ const responses=await Promise.all(['prices','rates'].map(name=>fetch(`data/${name}.json`,{cache:'no-store'})));
+ if(responses.some(r=>!r.ok))throw new Error('Не удалось загрузить цены. Проверьте интернет и повторите расчёт.');
+ const [prices,rates]=await Promise.all(responses.map(r=>r.json()));
+ if(!prices.cities||!rates.rates)throw new Error('Данные пока недоступны. Повторите позже.');
+ return {prices,rates};
 }
-function setOrigin(l,el){
- const note=el.querySelector('[data-origin]');
- const date=l.kind==='official_tariff'?`Тариф проверен ${displayDate(l.checkedAt)}; дата изменения цены оператором не указана.`:l.kind==='listing_sample'?`Выборка проверена ${displayDate(l.checkedAt)}. Самое раннее обновление объявления: ${displayDate(l.sourceDate)}.`:`Срез ${l.sourceDate?.slice(0,7)} · ${l.samples} наблюдений. Средняя цена.`;
- note.textContent=l.origin==='estimate'?`Автоматически · ${l.source??'Numbeo'}. ${date} ${l.priceNote??''}`:l.origin==='example'?'Учебная сумма, не рыночная цена.':l.amount!==''?'Ваша сумма. Автообновление её не меняет.':'';
- if(l.origin==='estimate'){
-  for(const [i,url]of [l.sourceUrl,...(l.evidence??[]).map(x=>x.url)].entries()){
-   try{if(new URL(url).protocol!=='https:')continue;}catch{continue;}
-   const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=i?`Объявление ${i} ↗`:'Источник ↗';note.append(' ',a);
-  }
- }
+function sourceDetails(quote){
+ const components=quote.components?.length?`<ul class="components">${quote.components.map(row=>`<li><span>${esc(row.label)} × ${esc(row.quantity)}</span><span>${esc(row.unitAmount)} ${esc(row.currency)} / ед.</span></li>`).join('')}</ul>`:'';
+ const evidence=quote.evidence?.length?`<ul>${quote.evidence.map((row,i)=>`<li>${link(row.url,`Объявление ${i+1}`)} · ${esc(row.amount)} ${esc(quote.currency)} · ${date(row.sourceDate)}</li>`).join('')}</ul>`:'';
+ return `<details class="source-detail"><summary>Источник и состав расходов</summary><div><p>${esc(quote.note)}</p><p>${link(quote.sourceUrl,quote.source)} · ${esc(quote.amount)} ${esc(quote.currency)} / месяц</p><p class="muted">Проверено: ${date(quote.checkedAt)}${quote.sourceDate?` · Дата источника: ${date(quote.sourceDate)}`:''}</p>${quote.kind==='city_reference'?'<p class="muted">Дата страницы; даты отдельных наблюдений и размер выборки не раскрыты.</p>':''}${components}${evidence}</div></details>`;
 }
-$('lines').addEventListener('input',e=>{
- const row=e.target.closest('[data-line]');if(!row)return;const l=lines.find(x=>x.id===row.dataset.line),field=e.target.dataset.field;
- if(field==='enabled'){l.enabled=e.target.checked;renderLines();}else if(field){l[field]=e.target.value;l.origin='manual';l.edited=true;l.sourceDate=null;setOrigin(l,row);}
- renderResult();
+function card(result,index){
+ const {city}=result,[name,country]=city.label.split(' · ');
+ const head=`<div class="card-heading"><span class="city-index">${String(index+1).padStart(2,'0')}</span><div><p class="country-name">${esc(country)}</p><h3>${esc(name)}</h3></div><span aria-hidden="true">↗</span></div>`;
+ if(result.unavailable)return `<article class="country-card unavailable">${head}<p class="status-pill">Нужны свежие данные</p><p>${esc(result.unavailable)}</p><p class="muted">Неполный расчёт не показываем как готовый бюджет.</p></article>`;
+ const r=result;
+ const rows=r.breakdown.filter(row=>row.id!=='obligations'||row.rubles>0).map(row=>`<div class="expense-item"><div class="expense-row"><span>${esc(row.label)}</span><strong>${money(row.rubles)}</strong></div>${r.quotes.has(row.id)?sourceDetails(r.quotes.get(row.id)):''}</div>`).join('');
+ const timeline=r.schedule.map(row=>`<tr><th scope="row">${row.month}</th><td>${money(row.beforeIncome)}</td><td>${money(row.balance)}</td></tr>`).join('');
+ return `<article class="country-card ${r.fits?'fits':''}">${head}<p class="status-pill ${r.fits?'positive':'neutral'}">${r.fits?'На жизнь и резерв хватает':'Нужно больше накоплений'}</p><div class="monthly-price"><strong>≈ ${money(r.monthlyPlanned)}</strong><span>расходы в месяц, с запасом 10%</span></div><div class="card-metrics"><div><span>${r.recurringBalance>=0?'Остаётся от дохода':'Из накоплений каждый месяц'}</span><strong class="${r.recurringBalance>=0?'green':''}">${r.recurringBalance>=0?signed(r.recurringBalance):money(-r.recurringBalance)}</strong></div><div><span>Нужно накоплений на ${r.months} мес. + резерв</span><strong>≈ ${money(r.required)}</strong></div></div><p class="verdict">${r.fits?`После выделения суммы на жизнь и резерв у вас остаётся <strong>${money(r.surplus)}</strong>. Из них можно планировать расходы самого переезда.`:`Для этого сценария не хватает <strong>${money(r.gap)}</strong>. Расходы самого переезда потребуют отдельной суммы.`}</p><details class="breakdown"><summary>На что уходят деньги <span aria-hidden="true">＋</span></summary><div class="breakdown-body">${rows}<div class="expense-row buffer"><span>Запас на рост расходов · 10%</span><strong>${money(r.buffer)}</strong></div><div class="expense-row total"><span>Итого за месяц</span><strong>${money(r.monthlyPlanned)}</strong></div><p class="small muted">Суммы показаны с округлением до рубля. Расчёт ведётся до копеек.</p><div class="reserve-box"><span>Неприкосновенный резерв</span><strong>${money(r.reserve)}</strong><p>Ещё один месяц всех расходов. Не расходуется в плане и входит в необходимые накопления.</p></div><details class="cashflow"><summary>Как меняется остаток за ${r.months} мес.</summary><p>Сначала оплачиваются расходы месяца, затем приходит доход. В остатках ниже резерв ещё не вычтен.</p><div class="table-scroll"><table><thead><tr><th>Месяц</th><th>До дохода</th><th>После дохода</th></tr></thead><tbody>${timeline}</tbody></table></div><p>Для сохранения резерва остаток до дохода должен быть не ниже ${money(r.reserve)}.</p></details>${city.id==='danang'?'<a class="rent-link" href="https://t.me/bucazuhome" target="_blank" rel="noopener noreferrer">Жильё в Дананге · BUCAZU HOME ↗</a>':''}</div></details></article>`;
+}
+function currentPersonal(){return {savings:$('savings').value,income:$('income').value,months:$('months').value,obligations:$('obligations').value};}
+$('budget-form').addEventListener('input',()=>{
+ $('assumption').innerHTML=`Сценарий: 1 человек · ${esc($('months').value)} ${$('months').value==='3'?'месяца':'месяцев'}<br>+ 10% на колебания расходов · резерв на месяц`;
+ if(submitted)$('dirty-notice').hidden=false;
 });
-function saveDestination(){const p={lines,advance:$('advance').value};for(const id of destinationMoney)p[id]=readMoney(id);drafts.set(city.id,p);}
-function blankDestination(c){return {lines:makeLines(c.currency),advance:'1',deposit:{amount:'0',currency:'RUB',basis:'household'},exitReserve:{amount:'0',currency:'RUB',basis:'household'}};}
-function switchDestination(id){
- saveDestination();city=cities.find(c=>c.id===id);$('city').value=id;
- const p=drafts.get(id)??blankDestination(city);lines=p.lines;$('advance').value=p.advance;
- for(const key of destinationMoney){$(key).value=p[key].amount;$(key+'-currency').value=p[key].currency;}
- renderLines();renderPriceState();renderResult();
-}
-$('city').addEventListener('change',()=>switchDestination($('city').value));
-$('more-destinations').addEventListener('click',()=>{
- const expanded=$('more-destinations').getAttribute('aria-expanded')!=='true';
- $('more-destinations').setAttribute('aria-expanded',String(expanded));
- $('country-cards').classList.toggle('show-all',expanded);
- $('more-destinations').textContent=expanded?'Свернуть список ↑':`Все ${cities.length} направлений ↓`;
- if(!expanded)$('destinations').scrollIntoView({behavior:'smooth'});
-});
-$('country-cards').addEventListener('click',e=>{const button=e.target.closest('[data-destination]');if(button){switchDestination(button.dataset.destination);$('destination-detail').scrollIntoView({behavior:'smooth'});}});
-for(const id of ['people','months','advance','buffer','reserveMonths','spread','incomeStart',...moneyIds,...moneyIds.map(x=>x+'-currency')])$(id).addEventListener('input',()=>renderResult());
-function readMoney(id){return {amount:$(id).value,currency:$(id+'-currency').value,basis:'household'};}
-function getInput(){const input={lines:[...lines,{id:'obligations',label:'Личные обязательства',period:'monthly',enabled:true,...readMoney('obligations')}]};for(const id of ['people','months','advance','buffer','reserveMonths','spread','incomeStart'])input[id]=$(id).value;for(const id of moneyIds)input[id]=readMoney(id);return input;}
-function selectedRates(input){
- const used=new Set([...input.lines.filter(x=>x.enabled),...moneyIds.map(id=>input[id])].map(l=>l.currency));
- const rates={RUB:'1',...snapshot?.rates};
- for(const c of used){if(c==='RUB')continue;
-  if(overrides[c]){if(decimal(overrides[c],10)<=0n)throw new Error(`Укажите положительный курс ${c}.`);rates[c]=overrides[c];continue;}
-  const quote=snapshot?.quotes?.[c];
-  const fresh=quote?ageDays(quote.effectiveDate)>=-1&&ageDays(quote.effectiveDate)<=7:rateFresh(snapshot);
-  if(!fresh||!rates[c])throw new Error(`Нет свежего курса ${c}. В разделе «Курсы и источники» укажите свой курс или проверьте обновление.`);
+$('budget-form').addEventListener('submit',async event=>{
+ event.preventDefault();$('form-error').hidden=true;
+ const personal=currentPersonal();
+ try{validatePersonal(personal);}catch{
+  $('form-error').textContent='Введите накопления, доход и обязательства: числа от 0, не больше двух знаков после запятой.';$('form-error').hidden=false;
+  const invalid=['savings','income','obligations'].find(id=>!/^\d+(?:[.,]\d{1,2})?$/.test($(id).value.replace(/\s/g,'')));
+  if(invalid){if(invalid==='obligations')document.querySelector('.settings').open=true;$(invalid).focus();}return;
  }
- return rates;
-}
-function renderResult(){
- renderComparison();$('detail-title').textContent=city.label;
- const missing=lines.filter(l=>l.enabled&&!l.amount.trim());
- document.querySelectorAll('[data-field=amount]').forEach(e=>e.removeAttribute('aria-invalid'));
- if(missing.length){hideResult(`Осталось заполнить: ${missing.map(l=>l.label.toLowerCase()).join(', ')}. Ненужные статьи можно исключить.`);return;}
+ $('calculate').disabled=true;$('calculate').textContent='Считаем…';
  try{
-  for(const l of lines.filter(x=>x.enabled&&x.origin==='estimate'))if(!priceFresh(l))throw new Error(`Ориентир «${l.label}» устарел. Введите новую цену или подставьте свежие данные.`);
-  const input=getInput();result=assess(input,selectedRates(input));renderBreakdown(result);
-  $('required').textContent=money(result.required);$('monthly').textContent=money(result.monthlyPlanned);$('total').textContent=money(result.cost);$('deposit-total').textContent=money(result.deposit);$('reserve-total').textContent=money(result.reserve);
-  $('calc-status').textContent=`На ${result.months} мес. · ${result.people} чел. · ${demo?'учебный пример':'по указанным суммам'}.`;const gap=$('gap');gap.hidden=false;gap.className='gap'+(result.gap?' short':'');gap.textContent=result.gap?`До выбранного плана не хватает ${money(result.gap)}.`:`Доступных денег хватает. Сверх плана: ${money(result.surplus)}.`;
-  const rows=[{label:'До заселения',outflow:result.upfront,income:0,beforeIncome:result.savings-result.upfront,balance:result.savings-result.upfront},...result.schedule.map(r=>({...r,label:`Месяц ${r.month}`}))];
-  $('schedule').innerHTML=rows.map(r=>`<tr class="month-row"><td data-label="Период">${r.label}</td><td data-label="Расход">${money(r.outflow)}</td><td data-label="Доход">${money(r.income)}</td><td data-label="До дохода" class="${r.beforeIncome<result.reserve?'negative':''}">${money(r.beforeIncome)}${r.beforeIncome<result.reserve?' *':''}</td><td data-label="Остаток">${money(r.balance)}</td></tr>`).join('')+`<tr><td colspan="5">* Остаток ниже неприкосновенного резерва ${money(result.reserve)}.</td></tr>`;
- }catch(e){hideResult(e.message);}
-}
-function hideResult(message){result=null;$('spending-breakdown').replaceChildren();for(const id of ['required','monthly','total','deposit-total','reserve-total'])$(id).textContent='—';$('gap').hidden=true;$('calc-status').textContent=message;$('schedule').innerHTML='<tr><td colspan="5">Расчёт появится после заполнения корректных сумм и курсов.</td></tr>';}
-function currentPriceEntries(){return freshPriceEntries(prices,city);}
-function renderPriceState(){const p=prices?.cities?.[city.id],entries=currentPriceEntries();$('apply-prices').disabled=!entries.length;
- $('price-status').textContent=entries.length?`Доступно ${entries.length} рыночных ориентиров. Получены: ${displayDate(p.fetchedAt)}. Цены подставляются и обновляются автоматически для направлений с данными; ваши правки сохраняются. Билеты, страховку и другие личные расходы уточните отдельно.`:p?'Сохранённые ориентиры устарели или недостаточно данных. Введите цену из свежего предложения.':'Для этого направления источник расходов пока не подключён. Курсы валют загружаются автоматически. Укажите недостающие цены; пустые статьи не считаются бесплатными.';
-}
-$('apply-prices').addEventListener('click',()=>{
- if(!demo)applyMarketPrices(lines,prices,city,{fillCleared:true});
- renderLines();renderResult();
+  data=await loadData();
+  const results=cities.map(city=>scenario(city,personal,data.prices,data.rates));
+  const valid=results.filter(r=>!r.unavailable).sort((a,b)=>a.monthlyPlanned-b.monthlyPlanned);
+  const sorted=[...valid,...results.filter(r=>r.unavailable)];
+  $('country-grid').innerHTML=sorted.map(card).join('');
+  for(const [index,result]of sorted.entries()){
+   if(result.unavailable)continue;
+   const rent=result.breakdown.find(row=>row.id==='rent').rubles,food=result.breakdown.find(row=>row.id==='food').rubles;
+   const preview=document.createElement('div');preview.className='preview-split';
+   preview.innerHTML=`<div><span>Жильё</span><strong>${money(rent)}</strong></div><div><span>Питание</span><strong>${money(food)}</strong></div><div><span>Другие расходы и запас</span><strong>${money(result.monthlyPlanned-rent-food)}</strong></div>`;
+   $('country-grid').children[index].querySelector('.monthly-price').after(preview);
+  }
+  $('coverage').textContent=`${valid.length} из 9 направлений`;
+  const first=valid[0];
+  const rub=value=>new Intl.NumberFormat('ru-RU').format(Number(value.replace(/\s/g,'').replace(',','.'))) + ' ₽';
+  $('snapshot').innerHTML=`<div><span>Ваши накопления</span><strong>${esc(rub(personal.savings))}</strong></div><div><span>Доход в месяц</span><strong>${esc(rub(personal.income))}</strong></div><div><span>Срок расчёта</span><strong>${personal.months} мес.</strong></div><div><span>Обязательства в месяц</span><strong>${esc(rub(personal.obligations))}</strong></div>`;
+  $('result-status').textContent=valid.length?`От меньших расходов к большим. Самый доступный сценарий: ${first.city.label.split(' · ')[0]}. Курс на ${date(data.rates.effectiveDate)}. Источники и даты — внутри каждой статьи расходов.`:'Свежих данных недостаточно. Ниже указано, что нужно обновить.';
+  $('data-status').textContent=`Курсы на ${date(data.rates.effectiveDate)}. Для расчёта доступны ${valid.length} из 9 направлений. Дата каждой цены указана в её источнике.`;
+  submitted=true;$('results').hidden=false;$('dirty-notice').hidden=JSON.stringify(personal)===JSON.stringify(currentPersonal());
+  $('results-title').focus({preventScroll:true});$('results').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+ }catch(error){$('form-error').textContent=error.message||'Не удалось выполнить расчёт. Попробуйте ещё раз.';$('form-error').hidden=false;}
+ finally{$('calculate').disabled=false;$('calculate').innerHTML='Рассчитать <span aria-hidden="true">↗</span>';}
 });
-function renderRates(){const fresh=rateFresh(snapshot);$('fx-status').textContent=snapshot?.effectiveDate?`Курсы ЦБ на ${displayDate(snapshot.effectiveDate)}. Получены ${displayDate(snapshot.fetchedAt)}.${fresh?'':' Данные устарели — автоматическая конвертация отключена.'}`:'Не удалось получить свежие курсы. Можно указать свои ниже.';$('fx-status').className=fresh?'':'bad-status';
- $('rates').innerHTML='<div class="rate-grid">'+currencies.filter(c=>c!=='RUB').map(c=>{const q=snapshot?.quotes?.[c],d=q?.effectiveDate??snapshot?.effectiveDate;return `<label>1 ${c} в рублях<input data-rate="${c}" aria-label="Курс ${c}: рублей за единицу" inputmode="decimal" placeholder="${snapshot?.rates?.[c]??'Нет курса'}"><small>${displayDate(d)}${c==='MYR'?' · через USD':''}</small></label>`;}).join('')+'</div>';
- for(const e of document.querySelectorAll('[data-rate]')){e.value=overrides[e.dataset.rate]??'';e.addEventListener('input',()=>{overrides[e.dataset.rate]=e.value.trim();renderResult();});}
-}
-async function reload(){const button=$('refresh');button.disabled=true;button.textContent='Проверяем…';
- try{const [r,p]=await Promise.all([fetch(`./data/rates.json?t=${Date.now()}`,{cache:'no-store'}),fetch(`./data/prices.json?t=${Date.now()}`,{cache:'no-store'})]);if(!r.ok||!p.ok)throw new Error();snapshot=await r.json();prices=await p.json();if(!demo){saveDestination();applyAllDestinations(drafts,cities,prices,blankDestination);lines=drafts.get(city.id).lines;renderLines();}renderRates();renderPriceState();renderResult();}
- catch{$('fx-status').textContent='Не удалось загрузить обновление. Сохранённые даты не менялись; проверьте соединение или укажите курс вручную.';$('fx-status').className='bad-status';renderPriceState();renderResult();}
- finally{button.disabled=false;button.textContent='Проверить обновления';}
-}
-$('refresh').addEventListener('click',reload);
-let beforeExample=null;
-$('example').addEventListener('click',()=>{
- if(!demo){saveDestination();beforeExample={drafts:structuredClone([...drafts]),city:city.id,values:Object.fromEntries(['people','months','buffer','reserveMonths','spread','incomeStart',...moneyIds,...moneyIds.map(x=>x+'-currency')].map(id=>[id,$(id).value]))};}
- drafts.clear();
- cities.forEach((c,i)=>{
-  const p=blankDestination(c);p.lines=makeLines('RUB');
-  const factor=1+i*.15,values={rent:30000,food:15000,utilities:5000,phone:1000,transport:3000,insurance:2000,flight:40000};
-  for(const l of p.lines){l.amount=l.id in values?String(Math.round(values[l.id]*factor)):'';l.enabled=l.id in values;l.origin='example';}
-  p.deposit.amount=String(Math.round(30000*factor));p.exitReserve.amount='30000';drafts.set(c.id,p);
- });
- city=cities[0];$('city').value=city.id;lines=drafts.get(city.id).lines;
- for(const [id,value]of Object.entries({people:1,months:3,advance:1,buffer:10,reserveMonths:1,spread:0,incomeStart:2,deposit:30000,exitReserve:30000,savings:400000,income:50000,obligations:0}))$(id).value=value;
- for(const id of moneyIds)$(id+'-currency').value='RUB';demo=true;$('demo-notice').hidden=false;renderLines();renderPriceState();renderResult();$('calculator').scrollIntoView({behavior:'smooth'});
-});
-$('clear-example').addEventListener('click',()=>{
- if(beforeExample){drafts.clear();for(const [id,p]of beforeExample.drafts)drafts.set(id,p);city=cities.find(c=>c.id===beforeExample.city);$('city').value=city.id;for(const [id,value]of Object.entries(beforeExample.values))$(id).value=value;const p=drafts.get(city.id);lines=p.lines;$('advance').value=p.advance;beforeExample=null;}
- demo=false;applyAllDestinations(drafts,cities,prices,blankDestination);lines=drafts.get(city.id).lines;$('demo-notice').hidden=true;renderLines();renderPriceState();renderResult();
-});
-function renderComparison(){
- saveDestination();
- const outcomes=cities.map(c=>{
-  const p=drafts.get(c.id)??blankDestination(c),missing=p.lines.filter(l=>l.enabled&&!l.amount.trim());
-  if(missing.length)return {c,missing:missing.length};
-  try{
-   for(const l of p.lines.filter(l=>l.enabled&&l.origin==='estimate'))if(!priceFresh(l))throw new Error('Цены устарели — обновите ориентиры.');
-   const input={...getInput(),...p,lines:[...p.lines,{id:'obligations',label:'Личные обязательства',period:'monthly',enabled:true,...readMoney('obligations')}]};
-   return {c,r:assess(input,selectedRates(input))};
-  }catch(e){return {c,error:e.message};}
- });
- outcomes.sort((a,b)=>a.r&&b.r?a.r.gap-b.r.gap||a.r.required-b.r.required:a.r?-1:b.r?1:0);
- const ready=outcomes.filter(o=>o.r),fits=ready.filter(o=>o.r.fits).length;
- const automatic=cities.filter(c=>freshPriceEntries(prices,c).length).length;
- $('comparison-status').textContent=demo?'Учебные цены · не рыночная оценка':ready.length?`Рассчитано ${ready.length} из ${cities.length}. По бюджету подходят: ${fits}.`:automatic?`Рыночные ориентиры загружены для ${automatic} из ${cities.length} направлений. Дополните недостающие расходы для полного расчёта.`:'Для автоматического сравнения требуется источник цен. Сейчас загружаются только курсы валют.';
- const escape=t=>String(t).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
- $('country-cards').innerHTML=outcomes.map(({c,r,missing,error})=>{
-  const [town,country]=c.label.split(' · ');
-  return `<article class="country-card ${r?.fits?'fits':''} ${c.id===city.id?'selected':''}"><div class="country-top"><span>${country}</span><span class="country-badge">${demo?'Пример':r?'По указанным ценам':'Нет расчёта'}</span></div><h3>${town}</h3>${r?`<strong class="country-monthly">${money(r.monthlyPlanned)}<small>в месяц, включая запас и обязательства</small></strong><dl><div><dt>Нужно на старте</dt><dd>${money(r.required)}</dd></div><div><dt>Доход − расходы / мес.</dt><dd>${money(r.recurringBalance)}</dd></div><div><dt>Деньги в конце срока</dt><dd>${money(r.endBalance)}</dd></div></dl><p class="country-verdict">${r.fits?`Хватает на выбранные ${r.months} мес.`:`Не хватает ${money(r.gap)}`}</p><p class="country-meta">${r.fits?'Резерв сохранён на всём сроке.':`Без расходования резерва: ${r.fundedMonths} из ${r.months} мес.`}</p>`:`<p class="country-empty">${error?escape(error):`Осталось указать ${missing} статей расходов. Без них нельзя оценить бюджет.`}</p>`}<button class="quiet" data-destination="${c.id}">${r?'Посмотреть расходы':'Указать расходы'} ↗</button></article>`;
- }).join('');
-}
-function renderBreakdown(r){
- const rows=r.breakdown.filter(x=>x.period==='monthly');
- $('spending-breakdown').innerHTML='<h3>На что уходит месяц</h3>'+rows.map(x=>`<div class="breakdown-row"><span>${x.label}</span><strong>${money(x.rubles)}</strong></div>`).join('')+`<div class="breakdown-row"><span>Запас на рост расходов</span><strong>${money(r.monthlyPlanned-r.monthly)}</strong></div><div class="breakdown-row balance-row"><span>Доход − расходы</span><strong>${money(r.recurringBalance)}</strong></div>`;
-}
-renderLines();renderResult();reload();
-// A tab left open overnight must not keep using a now-expired automatic quote.
-document.addEventListener('visibilitychange',()=>{if(!document.hidden){renderPriceState();renderResult();}});
-setInterval(()=>{renderPriceState();renderResult();},60000);
+loadData().then(value=>{data=value;$('data-status').textContent=`Курсы на ${date(data.rates.effectiveDate)}. Последняя успешная проверка указана отдельно у каждой цены.`;}).catch(()=>{$('data-status').textContent='Не удалось загрузить данные. Попробуем ещё раз при расчёте.';});
