@@ -33,16 +33,23 @@ export function calculate(input,rates){
   const buffer=decimal(input.buffer);
   if(buffer>10000n)throw new Error('Запас на рост расходов должен быть от 0 до 100%.');
   const plusBuffer=n=>safe(round(BigInt(n)*(10000n+buffer),10000n));
-  const convert=(line,inflow=false)=>toRubles(line.amount,line.currency,rates,{quantity:line.basis==='person'?people:1,spread:input.spread,inflow});
-  let monthly=0,oneTime=0,rent=0,fixedMonthly=0; const breakdown=[];
+  const convert=(line,inflow=false)=>toRubles(line.amount,line.currency,rates,{quantity:line.quantity??(line.basis==='person'?people:1),spread:input.spread,inflow});
+  let monthly=0,oneTime=0,rent=0,fixedMonthly=0; const breakdown=[],billing=[];
   for(const line of input.lines){
     if(!line.enabled)continue;
     let cost;try{cost=convert(line);}catch(e){throw new Error(`${line.label}: ${e.message}`);}
+    const paymentRubles=cost,paymentEvery=integer(line.paymentEvery??1,1,12,'Период оплаты');
+    if(paymentEvery>1){
+      if(line.period!=='monthly'||line.id==='rent'||line.id==='obligations')throw new Error('Период предоплаты недопустим для этой статьи.');
+      cost=safe(round(BigInt(paymentRubles),BigInt(paymentEvery)));
+      billing.push({cost,paymentRubles,paymentEvery});
+    }
     if(line.period==='monthly'){monthly+=cost;if(line.id==='rent')rent+=cost;if(line.id==='obligations')fixedMonthly+=cost;}else if(line.period==='once')oneTime+=cost;else throw new Error('Неизвестная периодичность расхода.');
-    breakdown.push({...line,rubles:cost});
+    breakdown.push({...line,rubles:cost,paymentRubles,paymentEvery});
   }
   if(!input.lines.some(x=>x.id==='rent'&&x.enabled))throw new Error('Укажите аренду, даже если она равна нулю.');
-  const monthlyPlanned=plusBuffer(monthly-fixedMonthly)+fixedMonthly,rentPlanned=plusBuffer(rent),oncePlanned=plusBuffer(oneTime);
+  const periodicMonthly=billing.reduce((sum,bill)=>sum+bill.cost,0);
+  const monthlyPlanned=plusBuffer(monthly-fixedMonthly-periodicMonthly)+billing.reduce((sum,bill)=>sum+plusBuffer(bill.cost),0)+fixedMonthly,rentPlanned=plusBuffer(rent),oncePlanned=plusBuffer(oneTime);
   const deposit=convert(input.deposit),exitReserve=convert(input.exitReserve);
   const reserve=monthlyPlanned*reserveMonths+exitReserve;
   const savings=convert(input.savings,true),income=convert(input.income,true);
@@ -50,7 +57,11 @@ export function calculate(input,rates){
   let net=upfront,peak=upfront,spent=upfront,incomes=0,firstShortfall=null;
   const schedule=[];
   for(let m=1;m<=months;m++){
-    const out=monthlyPlanned-(m<=advance?rentPlanned:0);
+    let out=monthlyPlanned-(m<=advance?rentPlanned:0);
+    for(const bill of billing){
+      out-=plusBuffer(bill.cost);
+      if((m-1)%bill.paymentEvery===0)out+=plusBuffer(bill.paymentRubles);
+    }
     net+=out;spent+=out;peak=Math.max(peak,net);
     const beforeIncome=savings-net;
     if(firstShortfall===null&&beforeIncome<reserve)firstShortfall=m;
@@ -59,7 +70,7 @@ export function calculate(input,rates){
     schedule.push({month:m,outflow:out,income:incoming,beforeIncome,balance:savings-net});
   }
   const required=peak+reserve;
-  const cost=oncePlanned+monthlyPlanned*months;
+  const cost=spent-deposit;
   for(const n of [monthly,oneTime,required,cost,reserve,spent,incomes])if(!Number.isSafeInteger(n))throw new Error('Сумма слишком большая.');
   return {people,months,monthly,monthlyPlanned,oneTime,oncePlanned,rentPlanned,deposit,reserve,exitReserve,savings,income,upfront,required,gap:Math.max(0,required-savings),surplus:Math.max(0,savings-required),cost,committed:cost+deposit,totalIncome:incomes,firstShortfall,schedule,breakdown};
 }

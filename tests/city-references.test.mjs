@@ -4,7 +4,7 @@ import {destinations,foodBasket,parseCityReference,collectCityReferences} from '
 import {cities} from '../src/catalog.mjs';
 const now=new Date('2026-09-25T12:00:00Z');
 function fixture(city=cities[0]){
- const labels=[...foodBasket.map(row=>row[0]),'1 Bedroom Apartment (Outside Center)','Basic Utilities 85m²','Internet','Phone Plan','Taxi Start','Taxi (per km)'];
+ const labels=[...foodBasket.map(row=>row[0]),'1 Bedroom Apartment (Outside Center)','3 Bedrooms Apartment (Outside Center)','Basic Utilities 85m²','Internet','Phone Plan','Taxi Start','Taxi (per km)'];
  return `<h1>Cost of Living in ${destinations[city.id][1]}</h1><script type="application/ld+json">{"priceCurrency":"USD"}</script><p>Last updated: September 24, 2026</p>${labels.map(label=>`<div><span>${label}</span><span>$1.01</span></div>`).join('')}`;
 }
 test('all nine city pages map correctly and sum a transparent basket with exact cents',()=>{
@@ -12,7 +12,7 @@ test('all nine city pages map correctly and sum a transparent basket with exact 
   assert.equal(Object.keys(record.items).length,6);assert.equal(record.currency,city.currency);
   assert.equal(record.items.transport.amount,'121.20');
   assert.equal(record.items.food.amount,(foodBasket.reduce((sum,row)=>sum+row[1],0)*101/100).toFixed(2));
-  assert.equal(record.items.rent.samples,null);assert.equal(record.items.food.components.length,15);
+  assert.equal(record.familyHousing.rent3.amount,'1.01');assert.equal(record.familyHousing.utilities85.amount,'1.01');assert.equal(record.items.rent.samples,null);assert.equal(record.items.food.components.length,15);
   assert.match(record.items.utilities.note,/85 м²/);
  }
 });

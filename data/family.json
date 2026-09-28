@@ -1,0 +1,1186 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-28",
+  "note": "Примеры конкретных учреждений, а не средняя цена города и не рекомендация. Возраст используется для подбора примерной ступени; фактический класс, язык, места и условия подтверждаются учреждением. Скидки на братьев/сестёр и льготы не предполагаются.",
+  "cities": {
+    "danang": {
+      "education": {
+        "name": "Odyssey International School",
+        "language": "английский",
+        "sourceUrl": "https://www.odyssey.edu.vn/tuition-and-fees",
+        "schoolYear": "2026–2027",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-12-27",
+        "validUntil": "2027-07-31",
+        "rows": [
+          {
+            "minAge": 3,
+            "maxAge": 3,
+            "label": "Junior Kindy",
+            "amount": "218400000",
+            "currency": "VND",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и зачисление",
+                "amount": "15000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Развитие кампуса",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Комплект формы",
+                "amount": "500000",
+                "currency": "VND",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 4,
+            "maxAge": 5,
+            "label": "Senior Kindy",
+            "amount": "254200000",
+            "currency": "VND",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и зачисление",
+                "amount": "15000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Развитие кампуса",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Комплект формы",
+                "amount": "500000",
+                "currency": "VND",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 6,
+            "maxAge": 8,
+            "label": "Grade 1–3",
+            "amount": "347600000",
+            "currency": "VND",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и зачисление",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Развитие кампуса",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Комплект формы",
+                "amount": "500000",
+                "currency": "VND",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 9,
+            "maxAge": 10,
+            "label": "Grade 4–5",
+            "amount": "363300000",
+            "currency": "VND",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и зачисление",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Развитие кампуса",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Комплект формы",
+                "amount": "500000",
+                "currency": "VND",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 11,
+            "maxAge": 13,
+            "label": "Grade 6–8",
+            "amount": "446150000",
+            "currency": "VND",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и зачисление",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Развитие кампуса",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Комплект формы",
+                "amount": "500000",
+                "currency": "VND",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 14,
+            "maxAge": 15,
+            "label": "Grade 9–10",
+            "amount": "522850000",
+            "currency": "VND",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и зачисление",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Развитие кампуса",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Комплект формы",
+                "amount": "500000",
+                "currency": "VND",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 16,
+            "maxAge": 17,
+            "label": "Grade 11–12",
+            "amount": "627900000",
+            "currency": "VND",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и зачисление",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Развитие кампуса",
+                "amount": "25000000",
+                "currency": "VND",
+                "period": "once"
+              },
+              {
+                "label": "Комплект формы",
+                "amount": "500000",
+                "currency": "VND",
+                "period": "once"
+              }
+            ]
+          }
+        ],
+        "note": "Сумма четырёх учебных четвертей без скидки за раннюю годовую оплату. В плане весь год резервируется и оплачивается в начале; фактические даты и перерасчёт при позднем зачислении согласуйте со школой. Питание, автобус, EAL, поездки и ноутбук отдельно. Возраст лишь подбирает пример класса."
+      },
+      "references": [
+        {
+          "name": "Горизонт: русская школа и сад",
+          "url": "https://gorizontkids.ru/price",
+          "note": "Сад полного дня: 10,8–11,25 млн VND; подготовительная группа 12,5 млн. Период оплаты следует уточнить. Школа 1–8 классы: 11,25 млн с питанием; годовой взнос 5 млн. Не подставляем неоднозначный период оплаты автоматически."
+        }
+      ],
+      "activityUnavailable": "Подтверждённого сопоставимого тарифа секции пока нет. Укажите свою сумму; отсутствие цены не означает бесплатные занятия."
+    },
+    "nhatrang": {
+      "education": {
+        "name": "Горизонт",
+        "language": "русский",
+        "sourceUrl": "https://gorizontkids.ru/price",
+        "schoolYear": "2026–2027",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-12-27",
+        "validUntil": "2027-07-31",
+        "rows": [
+          {
+            "minAge": 3,
+            "maxAge": 5,
+            "label": "Сад: старшая группа, полный день",
+            "amount": "9000000",
+            "currency": "VND",
+            "paymentEvery": 1,
+            "fees": [],
+            "needsQuote": "На странице не указан период оплаты сада; уточните у учреждения и внесите свою сумму."
+          },
+          {
+            "minAge": 6,
+            "maxAge": 10,
+            "label": "Начальная школа",
+            "amount": "9000000",
+            "currency": "VND",
+            "paymentEvery": 1,
+            "fees": [
+              {
+                "label": "Годовой вступительный взнос",
+                "amount": "5000000",
+                "currency": "VND",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 11,
+            "maxAge": 17,
+            "label": "Средняя и старшая школа",
+            "amount": "10000000",
+            "currency": "VND",
+            "paymentEvery": 1,
+            "fees": [
+              {
+                "label": "Годовой вступительный взнос",
+                "amount": "5000000",
+                "currency": "VND",
+                "period": "once"
+              }
+            ],
+            "needsQuote": "Цена 10 млн VND указана за 4 недели, а не за месяц. Уточните календарь платежей и внесите месячный бюджет с предоплатой."
+          }
+        ],
+        "note": "Начальная школа — 9 млн VND в месяц. Скидки не предполагаются. Продлёнка с питанием +2 млн VND, если нужна. Класс и программу подтвердите при зачислении."
+      },
+      "references": [
+        {
+          "name": "Сад и включённые кружки",
+          "url": "https://www.gorizontkids.ru/kindergarten",
+          "note": "В программу сада входят английский и творческие занятия. Дополнительные секции вне сада уточняются отдельно."
+        }
+      ],
+      "activityUnavailable": "Подтверждённого сопоставимого тарифа секции пока нет. Укажите свою сумму; отсутствие цены не означает бесплатные занятия."
+    },
+    "bangkok": {
+      "education": {
+        "name": "International School Bangkok",
+        "language": "английский",
+        "sourceUrl": "https://www.isb.ac.th/admissions/fees",
+        "schoolYear": "2026–2027",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-12-27",
+        "validUntil": "2027-07-31",
+        "rows": [
+          {
+            "minAge": 3,
+            "maxAge": 4,
+            "label": "Pre-Kindergarten",
+            "amount": "659000",
+            "currency": "THB",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и членство",
+                "amount": "4710",
+                "currency": "THB",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 5,
+            "maxAge": 10,
+            "label": "KG–Grade 5",
+            "amount": "1015000",
+            "currency": "THB",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и членство",
+                "amount": "4710",
+                "currency": "THB",
+                "period": "once"
+              },
+              {
+                "label": "Первичное зачисление",
+                "amount": "260000",
+                "currency": "THB",
+                "period": "once"
+              },
+              {
+                "label": "Годовой сбор",
+                "amount": "22000",
+                "currency": "THB",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 11,
+            "maxAge": 13,
+            "label": "Grade 6–8",
+            "amount": "1137000",
+            "currency": "THB",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и членство",
+                "amount": "4710",
+                "currency": "THB",
+                "period": "once"
+              },
+              {
+                "label": "Первичное зачисление",
+                "amount": "260000",
+                "currency": "THB",
+                "period": "once"
+              },
+              {
+                "label": "Годовой сбор",
+                "amount": "22000",
+                "currency": "THB",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 14,
+            "maxAge": 17,
+            "label": "Grade 9–12",
+            "amount": "1197000",
+            "currency": "THB",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и членство",
+                "amount": "4710",
+                "currency": "THB",
+                "period": "once"
+              },
+              {
+                "label": "Первичное зачисление",
+                "amount": "260000",
+                "currency": "THB",
+                "period": "once"
+              },
+              {
+                "label": "Годовой сбор",
+                "amount": "22000",
+                "currency": "THB",
+                "period": "once"
+              }
+            ]
+          }
+        ],
+        "note": "Кампус в Nonthaburi, агломерация Бангкока. Для плана выбран полный год авансом; школа допускает оплату по семестрам. Автобус, питание и дополнительные услуги отдельно. Обычная медицинская страховка не заменяется школьной."
+      },
+      "activity": {
+        "name": "Aqua-Tots Thawi Watthana: групповое плавание",
+        "sourceUrl": "https://www.aqua-tots.com/bangkok/",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-10-28",
+        "minAge": 1,
+        "maxAge": 12,
+        "amount": "3100",
+        "currency": "THB",
+        "paymentEvery": 1,
+        "fees": [
+          {
+            "label": "Годовая регистрация ребёнка",
+            "amount": "800",
+            "currency": "THB",
+            "period": "once"
+          }
+        ],
+        "note": "Опубликованная цена от 3 100 THB/месяц. Число занятий и итог уточните; семейный тариф регистрации может быть выгоднее. Не цена всех секций города."
+      },
+      "references": []
+    },
+    "bali": {
+      "education": {
+        "name": "Bali Island School, Sanur",
+        "language": "английский",
+        "sourceUrl": "https://baliinternationalschool.com/wp-content/uploads/2026/02/TuitionfeesSY26-27.pdf",
+        "schoolYear": "2026–2027",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-12-27",
+        "validUntil": "2027-07-31",
+        "rows": [
+          {
+            "minAge": 3,
+            "maxAge": 3,
+            "label": "Preschool 3, половина дня",
+            "amount": "54598000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "22252000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 4,
+            "maxAge": 4,
+            "label": "Preschool 4, полный день",
+            "amount": "70723000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "22252000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 5,
+            "maxAge": 5,
+            "label": "Kindy",
+            "amount": "131783000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "22252000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 6,
+            "maxAge": 7,
+            "label": "Grade 1–2",
+            "amount": "208952000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "25675000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 8,
+            "maxAge": 10,
+            "label": "Grade 3–5",
+            "amount": "211921000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "25675000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 11,
+            "maxAge": 11,
+            "label": "Grade 6",
+            "amount": "232578000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "28527000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 12,
+            "maxAge": 13,
+            "label": "Grade 7–8",
+            "amount": "250979000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "28527000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 14,
+            "maxAge": 14,
+            "label": "Grade 9",
+            "amount": "252672000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "28527000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 15,
+            "maxAge": 15,
+            "label": "Grade 10",
+            "amount": "258805000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "28527000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 16,
+            "maxAge": 17,
+            "label": "Grade 11–12",
+            "amount": "301738000",
+            "currency": "IDR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка",
+                "amount": "2500000",
+                "currency": "IDR",
+                "period": "once"
+              },
+              {
+                "label": "Capital Levy",
+                "amount": "28527000",
+                "currency": "IDR",
+                "period": "once"
+              }
+            ]
+          }
+        ],
+        "note": "Полный год авансом, без скидок. Capital Levy добавлен отдельно один раз. Регистрационные 15 млн IDR засчитываются в обучение и повторно не прибавляются. Питание, транспорт, экзамены и необязательные поездки отдельно."
+      },
+      "activity": {
+        "name": "Tirta Krisna, Jembrana: Swim Basic",
+        "sourceUrl": "https://tirtakrisnasc.com/",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-10-28",
+        "minAge": 6,
+        "maxAge": 17,
+        "amount": "600000",
+        "currency": "IDR",
+        "paymentEvery": 3,
+        "fees": [],
+        "note": "Пакет от 600 000 IDR за 12 занятий. В плане 4 занятия в месяц и покупка пакета раз в 3 месяца. Jembrana — другой район, не Sanur/Canggu; дорога отдельно."
+      },
+      "references": []
+    },
+    "kl": {
+      "education": {
+        "name": "International School of Kuala Lumpur",
+        "language": "английский",
+        "sourceUrl": "https://www.iskl.edu.my/admissions/iskl-fees",
+        "schoolYear": "2026–2027",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-12-27",
+        "validUntil": "2027-07-31",
+        "rows": [
+          {
+            "minAge": 3,
+            "maxAge": 3,
+            "label": "Prep Reception",
+            "amount": "74412.0",
+            "currency": "MYR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка с 6% SST",
+                "amount": "1908",
+                "currency": "MYR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 4,
+            "maxAge": 4,
+            "label": "Prep Junior",
+            "amount": "98686.0",
+            "currency": "MYR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка с 6% SST",
+                "amount": "1908",
+                "currency": "MYR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 5,
+            "maxAge": 10,
+            "label": "Prep Senior–Grade 5",
+            "amount": "122536.0",
+            "currency": "MYR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка с 6% SST",
+                "amount": "1908",
+                "currency": "MYR",
+                "period": "once"
+              },
+              {
+                "label": "Зачисление с 6% SST",
+                "amount": "62540",
+                "currency": "MYR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 11,
+            "maxAge": 13,
+            "label": "Grade 6–8",
+            "amount": "138436.0",
+            "currency": "MYR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка с 6% SST",
+                "amount": "1908",
+                "currency": "MYR",
+                "period": "once"
+              },
+              {
+                "label": "Зачисление с 6% SST",
+                "amount": "62540",
+                "currency": "MYR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 14,
+            "maxAge": 17,
+            "label": "Grade 9–12",
+            "amount": "152004.0",
+            "currency": "MYR",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка с 6% SST",
+                "amount": "1908",
+                "currency": "MYR",
+                "period": "once"
+              },
+              {
+                "label": "Зачисление с 6% SST",
+                "amount": "62540",
+                "currency": "MYR",
+                "period": "once"
+              }
+            ]
+          }
+        ],
+        "note": "Включены опубликованные 6% SST, без предположения о льготе. В плане год авансом. Депозит за место уже входит в обучение и не дублируется. Автобус, форма, питание, поездки, экзамены и поддержка LCE отдельно."
+      },
+      "activity": {
+        "name": "Плавание Taman Midah, Cheras",
+        "sourceUrl": "https://www.swimminglesson.com.my/swimming-lesson-in-kl-kuala-lumpur/",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-10-28",
+        "minAge": 5,
+        "maxAge": 17,
+        "amount": "169.6",
+        "currency": "MYR",
+        "paymentEvery": 1,
+        "fees": [
+          {
+            "label": "Регистрация",
+            "amount": "50",
+            "currency": "MYR",
+            "period": "once"
+          }
+        ],
+        "note": "Пакет 4 занятия в будни по 60 минут; в плане один такой пакет в месяц. Доплаты за бассейн и расписание подтвердите."
+      },
+      "references": []
+    },
+    "tbilisi": {
+      "education": {
+        "name": "Deutsche Internationale Schule Tbilissi",
+        "language": "немецкий",
+        "sourceUrl": "https://deutscheschule.ge/files/files/Schulgeldordnungen/Schulgeldordnung_2026-2027_DEU.pdf",
+        "schoolYear": "2026–2027",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-12-27",
+        "validUntil": "2027-07-31",
+        "rows": [
+          {
+            "minAge": 3,
+            "maxAge": 4,
+            "label": "Kindergarten с питанием",
+            "amount": "13855",
+            "currency": "GEL",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичное зачисление",
+                "amount": "1840",
+                "currency": "GEL",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 5,
+            "maxAge": 5,
+            "label": "Vorschule с питанием",
+            "amount": "17280",
+            "currency": "GEL",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичное зачисление",
+                "amount": "1840",
+                "currency": "GEL",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 6,
+            "maxAge": 9,
+            "label": "Grundschule с питанием",
+            "amount": "17865",
+            "currency": "GEL",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичное зачисление",
+                "amount": "1840",
+                "currency": "GEL",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 10,
+            "maxAge": 11,
+            "label": "Klassen 5–6 с питанием",
+            "amount": "18000",
+            "currency": "GEL",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичное зачисление",
+                "amount": "1840",
+                "currency": "GEL",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 12,
+            "maxAge": 15,
+            "label": "Klassen 7–10 с питанием",
+            "amount": "20860",
+            "currency": "GEL",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичное зачисление",
+                "amount": "1840",
+                "currency": "GEL",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 16,
+            "maxAge": 17,
+            "label": "Klassen 11–12 с питанием",
+            "amount": "23715",
+            "currency": "GEL",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичное зачисление",
+                "amount": "1840",
+                "currency": "GEL",
+                "period": "once"
+              }
+            ]
+          }
+        ],
+        "note": "Выбран полный год авансом, с питанием. Возможна оплата по полугодиям. Учебники, материалы и поездки отдельно; скидки на детей не заложены. Язык и зачисление требуют согласования."
+      },
+      "activity": {
+        "name": "SHARKS: плавание в группе",
+        "sourceUrl": "https://swimsharks.ge/detskoe-plavanie/",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-10-28",
+        "minAge": 5,
+        "maxAge": 17,
+        "amount": "200",
+        "currency": "GEL",
+        "paymentEvery": 1,
+        "fees": [],
+        "note": "Абонемент на 4 занятия. Для расчёта выбран один абонемент в месяц. Группа от 5 лет; бассейн и уровень согласуются."
+      },
+      "references": []
+    },
+    "yerevan": {
+      "education": {
+        "name": "Lycée international français Anatole France",
+        "language": "французский",
+        "sourceUrl": "https://lyceefrancais.am/en/tuition-fees/",
+        "schoolYear": "2026–2027",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-12-27",
+        "validUntil": "2027-07-31",
+        "rows": [
+          {
+            "minAge": 3,
+            "maxAge": 5,
+            "label": "Kindergarten",
+            "amount": "2200000",
+            "currency": "AMD",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичная регистрация",
+                "amount": "350000",
+                "currency": "AMD",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 6,
+            "maxAge": 10,
+            "label": "Elementary school",
+            "amount": "2870000",
+            "currency": "AMD",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичная регистрация",
+                "amount": "350000",
+                "currency": "AMD",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 11,
+            "maxAge": 14,
+            "label": "Collège",
+            "amount": "3460000",
+            "currency": "AMD",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичная регистрация",
+                "amount": "350000",
+                "currency": "AMD",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 15,
+            "maxAge": 17,
+            "label": "Lycée",
+            "amount": "3750000",
+            "currency": "AMD",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Первичная регистрация",
+                "amount": "350000",
+                "currency": "AMD",
+                "period": "once"
+              }
+            ]
+          }
+        ],
+        "note": "Годовой тариф включает питание, школьную страховку и указанную продлёнку. Для запаса выбран год авансом; школа предлагает и другие графики. Скидки на следующих детей не заложены. Школьная страховка не равна полной семейной медицинской."
+      },
+      "references": [],
+      "activityUnavailable": "Подтверждённого сопоставимого тарифа секции пока нет. Укажите свою сумму; отсутствие цены не означает бесплатные занятия."
+    },
+    "belgrade": {
+      "education": {
+        "name": "International School of Belgrade",
+        "language": "английский",
+        "sourceUrl": "https://www.isb.rs/admissions/isb-tuition-fees",
+        "schoolYear": "2026–2027",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-12-27",
+        "validUntil": "2027-07-31",
+        "rows": [
+          {
+            "minAge": 3,
+            "maxAge": 4,
+            "label": "Pre-Kindergarten",
+            "amount": "10580",
+            "currency": "USD",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и регистрация",
+                "amount": "1500",
+                "currency": "USD",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 5,
+            "maxAge": 10,
+            "label": "KG–Grade 5",
+            "amount": "24225",
+            "currency": "USD",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и регистрация",
+                "amount": "1500",
+                "currency": "USD",
+                "period": "once"
+              },
+              {
+                "label": "Capital Fee для нового ученика",
+                "amount": "3000",
+                "currency": "EUR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 11,
+            "maxAge": 13,
+            "label": "Grade 6–8",
+            "amount": "26095",
+            "currency": "USD",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и регистрация",
+                "amount": "1500",
+                "currency": "USD",
+                "period": "once"
+              },
+              {
+                "label": "Capital Fee для нового ученика",
+                "amount": "3000",
+                "currency": "EUR",
+                "period": "once"
+              }
+            ]
+          },
+          {
+            "minAge": 14,
+            "maxAge": 17,
+            "label": "Grade 9–12",
+            "amount": "28945",
+            "currency": "USD",
+            "paymentEvery": 12,
+            "fees": [
+              {
+                "label": "Заявка и регистрация",
+                "amount": "1500",
+                "currency": "USD",
+                "period": "once"
+              },
+              {
+                "label": "Capital Fee для нового ученика",
+                "amount": "3000",
+                "currency": "EUR",
+                "period": "once"
+              }
+            ]
+          }
+        ],
+        "note": "Тарифы нового ученика, год авансом. Capital Fee в EUR учитывается отдельно от обучения в USD. Питание, транспорт, EAL и платёжный план отдельно; их применимость уточняется."
+      },
+      "activity": {
+        "name": "Школа плавания, Dom sportova",
+        "sourceUrl": "https://rzsport.gov.rs/skolica-plivanja/",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-10-28",
+        "minAge": 6,
+        "maxAge": 17,
+        "amount": "3000",
+        "currency": "RSD",
+        "paymentEvery": 1,
+        "fees": [],
+        "note": "Опубликованная месячная цена, 3 занятия в неделю. Дата тарифа и возрастной допуск на странице не указаны: перед оплатой подтвердите; возраст 6–17 здесь только диапазон планирования."
+      },
+      "references": []
+    },
+    "antalya": {
+      "education": {
+        "name": "Antalya Koleji",
+        "language": "турецкий",
+        "sourceUrl": "https://antalyakoleji.k12.tr/kayit-ucretleri/",
+        "schoolYear": "2026–2027",
+        "checkedAt": "2026-09-28",
+        "reviewDueAt": "2026-12-27",
+        "validUntil": "2027-07-31",
+        "rows": [
+          {
+            "minAge": 4,
+            "maxAge": 5,
+            "label": "Дошкольное отделение",
+            "amount": "217638",
+            "currency": "TRY",
+            "paymentEvery": 12,
+            "fees": [],
+            "needsQuote": "Прайс указан без KDV; также отдельно оплачиваются питание и занятия. Для итоговой суммы нужен счёт школы с налогами. Внесите свою подтверждённую сумму."
+          },
+          {
+            "minAge": 6,
+            "maxAge": 6,
+            "label": "1 класс",
+            "amount": "306753",
+            "currency": "TRY",
+            "paymentEvery": 12,
+            "fees": [],
+            "needsQuote": "Прайс указан без KDV; также отдельно оплачиваются питание и занятия. Для итоговой суммы нужен счёт школы с налогами. Внесите свою подтверждённую сумму."
+          },
+          {
+            "minAge": 7,
+            "maxAge": 9,
+            "label": "2–4 классы",
+            "amount": "278661",
+            "currency": "TRY",
+            "paymentEvery": 12,
+            "fees": [],
+            "needsQuote": "Прайс указан без KDV; также отдельно оплачиваются питание и занятия. Для итоговой суммы нужен счёт школы с налогами. Внесите свою подтверждённую сумму."
+          },
+          {
+            "minAge": 10,
+            "maxAge": 10,
+            "label": "5 класс",
+            "amount": "343878",
+            "currency": "TRY",
+            "paymentEvery": 12,
+            "fees": [],
+            "needsQuote": "Прайс указан без KDV; также отдельно оплачиваются питание и занятия. Для итоговой суммы нужен счёт школы с налогами. Внесите свою подтверждённую сумму."
+          },
+          {
+            "minAge": 11,
+            "maxAge": 13,
+            "label": "6–8 классы",
+            "amount": "312386",
+            "currency": "TRY",
+            "paymentEvery": 12,
+            "fees": [],
+            "needsQuote": "Прайс указан без KDV; также отдельно оплачиваются питание и занятия. Для итоговой суммы нужен счёт школы с налогами. Внесите свою подтверждённую сумму."
+          }
+        ],
+        "note": "Только опубликованные цены нового зачисления, без ранних скидок. Питание 263 653 TRY и занятия 61 042 TRY также указаны без KDV. Без полного счёта автоматический итог обучения не выдаётся."
+      },
+      "references": [],
+      "activityUnavailable": "Подтверждённого сопоставимого тарифа секции пока нет. Укажите свою сумму; отсутствие цены не означает бесплатные занятия."
+    }
+  }
+}

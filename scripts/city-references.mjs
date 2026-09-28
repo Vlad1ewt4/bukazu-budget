@@ -46,7 +46,10 @@ export function parseCityReference(html,city,now=new Date()){
    {label:'Посадка в такси',quantity:20,unitAmount:money(start),currency:'USD'},
    {label:'Расстояние, 1 км',quantity:100,unitAmount:money(km),currency:'USD'}])
  };
- return {currency:city.currency,fetchedAt:now.toISOString(),items};
+ const familyHousing={};
+ try{familyHousing.rent3=quote(price('3 Bedrooms Apartment (Outside Center)'),'household','Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.');}catch{}
+ try{familyHousing.utilities85=quote(price('Basic Utilities 85m²'),'household','Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.');}catch{}
+ return {currency:city.currency,fetchedAt:now.toISOString(),items,familyHousing};
 }
 
 export async function collectCityReferences(previous,get,now=new Date()){

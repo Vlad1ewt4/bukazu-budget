@@ -5,7 +5,7 @@
   "cities": {
     "danang": {
       "currency": "VND",
-      "fetchedAt": "2026-09-27T18:30:24.805Z",
+      "fetchedAt": "2026-09-28T04:09:38.977Z",
       "items": {
         "rent": {
           "amount": "10000000.00",
@@ -162,7 +162,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -267,7 +267,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -281,7 +281,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -309,7 +309,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -326,11 +326,41 @@
             }
           ]
         }
+      },
+      "familyHousing": {
+        "rent3": {
+          "amount": "426.84",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.",
+          "components": []
+        },
+        "utilities85": {
+          "amount": "56.42",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/da-nang/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.",
+          "components": []
+        }
       }
     },
     "nhatrang": {
       "currency": "VND",
-      "fetchedAt": "2026-09-27T18:30:24.805Z",
+      "fetchedAt": "2026-09-28T04:09:38.977Z",
       "items": {
         "rent": {
           "amount": "195.41",
@@ -342,7 +372,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -356,7 +386,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -461,7 +491,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -475,7 +505,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -503,7 +533,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -520,11 +550,41 @@
             }
           ]
         }
+      },
+      "familyHousing": {
+        "rent3": {
+          "amount": "449.52",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.",
+          "components": []
+        },
+        "utilities85": {
+          "amount": "84.23",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/nha-trang/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.",
+          "components": []
+        }
       }
     },
     "bangkok": {
       "currency": "THB",
-      "fetchedAt": "2026-09-27T18:30:24.805Z",
+      "fetchedAt": "2026-09-28T04:09:38.977Z",
       "items": {
         "rent": {
           "amount": "361.78",
@@ -536,7 +596,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -550,7 +610,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -655,7 +715,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -669,7 +729,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -683,7 +743,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
           "components": []
         },
@@ -714,11 +774,41 @@
             }
           ]
         }
+      },
+      "familyHousing": {
+        "rent3": {
+          "amount": "817.95",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.",
+          "components": []
+        },
+        "utilities85": {
+          "amount": "108.14",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bangkok/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.",
+          "components": []
+        }
       }
     },
     "bali": {
       "currency": "IDR",
-      "fetchedAt": "2026-09-27T18:30:24.805Z",
+      "fetchedAt": "2026-09-28T04:09:38.977Z",
       "items": {
         "rent": {
           "amount": "815.10",
@@ -730,7 +820,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -744,7 +834,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -849,7 +939,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Источник публикует коммунальные услуги для 85 м². Это ориентир для этой площади; фактический счёт небольшой квартиры может отличаться.",
           "components": []
         },
@@ -863,7 +953,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -877,7 +967,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
           "components": []
         },
@@ -891,7 +981,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -908,11 +998,41 @@
             }
           ]
         }
+      },
+      "familyHousing": {
+        "rent3": {
+          "amount": "1756.72",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.",
+          "components": []
+        },
+        "utilities85": {
+          "amount": "86.89",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/bali-island/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.",
+          "components": []
+        }
       }
     },
     "kl": {
       "currency": "MYR",
-      "fetchedAt": "2026-09-27T18:30:24.805Z",
+      "fetchedAt": "2026-09-28T04:09:38.977Z",
       "items": {
         "rent": {
           "amount": "352.26",
@@ -924,7 +1044,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -938,7 +1058,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -1043,7 +1163,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -1057,7 +1177,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -1071,7 +1191,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
           "components": []
         },
@@ -1085,7 +1205,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1102,11 +1222,41 @@
             }
           ]
         }
+      },
+      "familyHousing": {
+        "rent3": {
+          "amount": "583.55",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.",
+          "components": []
+        },
+        "utilities85": {
+          "amount": "64.84",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/kuala-lumpur/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.",
+          "components": []
+        }
       }
     },
     "tbilisi": {
       "currency": "GEL",
-      "fetchedAt": "2026-09-27T18:30:24.805Z",
+      "fetchedAt": "2026-09-28T04:09:38.977Z",
       "items": {
         "rent": {
           "amount": "497.86",
@@ -1118,7 +1268,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -1132,7 +1282,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -1237,7 +1387,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -1251,7 +1401,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -1278,7 +1428,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1295,11 +1445,41 @@
             }
           ]
         }
+      },
+      "familyHousing": {
+        "rent3": {
+          "amount": "811.82",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.",
+          "components": []
+        },
+        "utilities85": {
+          "amount": "75.47",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/tbilisi/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.",
+          "components": []
+        }
       }
     },
     "yerevan": {
       "currency": "AMD",
-      "fetchedAt": "2026-09-27T18:30:24.805Z",
+      "fetchedAt": "2026-09-28T04:09:38.977Z",
       "items": {
         "rent": {
           "amount": "543.83",
@@ -1311,7 +1491,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -1325,7 +1505,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -1430,7 +1610,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -1444,7 +1624,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -1471,7 +1651,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1488,11 +1668,41 @@
             }
           ]
         }
+      },
+      "familyHousing": {
+        "rent3": {
+          "amount": "887.88",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.",
+          "components": []
+        },
+        "utilities85": {
+          "amount": "129.81",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/yerevan/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.",
+          "components": []
+        }
       }
     },
     "belgrade": {
       "currency": "RSD",
-      "fetchedAt": "2026-09-27T18:30:24.805Z",
+      "fetchedAt": "2026-09-28T04:09:38.977Z",
       "items": {
         "rent": {
           "amount": "501.40",
@@ -1504,7 +1714,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -1518,7 +1728,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -1623,7 +1833,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Коммунальные услуги небольшой квартиры по данным источника. Площадь не указана.",
           "components": []
         },
@@ -1637,7 +1847,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -1664,7 +1874,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1681,11 +1891,41 @@
             }
           ]
         }
+      },
+      "familyHousing": {
+        "rent3": {
+          "amount": "816.17",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.",
+          "components": []
+        },
+        "utilities85": {
+          "amount": "183.05",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/belgrade/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.",
+          "components": []
+        }
       }
     },
     "antalya": {
       "currency": "TRY",
-      "fetchedAt": "2026-09-27T18:30:24.805Z",
+      "fetchedAt": "2026-09-28T04:09:38.977Z",
       "items": {
         "rent": {
           "amount": "411.86",
@@ -1697,7 +1937,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Квартира с одной спальней вне центра. Рыночный ориентир, не предложение конкретного владельца. Депозит отдельно.",
           "components": []
         },
@@ -1711,7 +1951,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Одинаковая корзина для сравнения: продукты, 20 приёмов пищи в недорогом кафе и 12 кофе в месяц. Это выбранный сценарий питания, не универсальная норма.",
           "components": [
             {
@@ -1816,7 +2056,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Источник публикует коммунальные услуги для 85 м². Это ориентир для этой площади; фактический счёт небольшой квартиры может отличаться.",
           "components": []
         },
@@ -1830,7 +2070,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Отдельный домашний интернет. В этом сценарии не включён в аренду.",
           "components": []
         },
@@ -1844,7 +2084,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "Ориентир стоимости мобильного пакета. Оператор, объём трафика и условия подключения зависят от выбранного тарифа.",
           "components": []
         },
@@ -1858,7 +2098,7 @@
           "source": "Nomadlio",
           "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
           "sourceDate": "2026-09-27",
-          "checkedAt": "2026-09-27T18:30:24.805Z",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
           "note": "20 поездок на такси по 5 км в месяц: посадка + расстояние. Без ожидания, повышенного спроса и аэропортовых сборов.",
           "components": [
             {
@@ -1874,6 +2114,36 @@
               "currency": "USD"
             }
           ]
+        }
+      },
+      "familyHousing": {
+        "rent3": {
+          "amount": "601.70",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Квартира с тремя спальнями вне центра. Ориентир для семьи, не конкретное предложение; депозит отдельно.",
+          "components": []
+        },
+        "utilities85": {
+          "amount": "55.27",
+          "currency": "USD",
+          "basis": "household",
+          "period": "monthly",
+          "kind": "city_reference",
+          "samples": null,
+          "source": "Nomadlio",
+          "sourceUrl": "https://nomadlio.com/antalya/cost-of-living/",
+          "sourceDate": "2026-09-27",
+          "checkedAt": "2026-09-28T04:09:38.977Z",
+          "note": "Коммунальные услуги для квартиры 85 м². Это выбранный ориентир площади, а не норматив на семью.",
+          "components": []
         }
       }
     }
