@@ -58,20 +58,20 @@
     "KRW": "0.0633996000",
     "JPY": "0.5370320000",
     "MMK": "0.0404309000",
-    "MYR": "20.7667359667"
+    "MYR": "20.7982754820"
   },
   "quotes": {
     "MYR": {
-      "value": "20.7667359667",
-      "effectiveDate": "2026-10-09",
+      "value": "20.7982754820",
+      "effectiveDate": "2026-10-10",
       "source": "Банк России + Bank Negara Malaysia; кросс-курс через USD",
       "sourceUrl": "https://www.bnm.gov.my/exchange-rates",
       "componentDates": {
         "USD_RUB": "2026-10-10",
-        "USD_MYR": "2026-10-09"
+        "USD_MYR": "2026-10-12"
       }
     }
   },
   "status": "loaded",
-  "fetchedAt": "2026-10-11T19:00:02.818Z"
+  "fetchedAt": "2026-10-12T13:17:12.972Z"
 }
